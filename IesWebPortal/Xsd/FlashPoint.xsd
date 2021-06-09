@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FlashPoint" targetNamespace="http://tempuri.org/FlashPoint.xsd"
+  elementFormDefault="qualified" xmlns="http://tempuri.org/FlashPoint.xsd"
+  xmlns:mstns="http://tempuri.org/FlashPoint.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ROOT">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="DATA">
+          <xs:complexType>
+            <xs:attribute name="Depot" use="required"/>
+            <xs:attribute name="Reference" use="required"/>
+            <xs:attribute name="CodeFamille"/>
+            <xs:attribute name="Emplacement"/>
+            <xs:attribute name="Designation"/>
+            <xs:attribute name="QuantiteStock" type="xs:double"/>
+            <xs:attribute name="PointEclair" type="xs:double"/>
+            <xs:attribute name="Coeff" type="xs:double"/>
+            <xs:attribute name="CTE" type="xs:double"/>
+            <xs:attribute name="Dangeureux"/>
+            <xs:attribute name="PhraseRisque"/>
+            <xs:attribute name="NumeroEiniecs"/>
+            <xs:attribute name="RID"/>
+            <xs:attribute name="IMDG"/>
+            <xs:attribute name="ICADIATA"/>
+            <xs:attribute name="Pictogramme"/>
+            <xs:attribute name="UN"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
