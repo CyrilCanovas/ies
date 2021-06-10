@@ -1,13 +1,16 @@
+using IQToolkit.Data.Common;
+using IQToolkit.Data.SqlClient;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SageClassLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using System.Data.SqlClient;
 namespace IesWebPortal
 {
     public class Startup
@@ -23,6 +26,19 @@ namespace IesWebPortal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddTransient<SageDataContext>(x => CreateSageDataContext(Configuration.GetConnectionString("DefaultConnection")));
+        }
+
+        private static SageDataContext CreateSageDataContext(string connStr)
+        {
+            var sqlconn = new SqlConnection(connStr);
+            sqlconn.Open();
+            var sqldbqueryprovider = new SqlQueryProvider(
+                        sqlconn,
+                        new SageClassLibrary.CustomMapping(TSqlLanguage.Default as QueryLanguage),
+                        QueryPolicy.Default);
+            //sqldbqueryprovider.Log = Console.Out;
+            return new SageClassLibrary.SageDataContext(sqldbqueryprovider);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

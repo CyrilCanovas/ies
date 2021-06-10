@@ -1,0 +1,68 @@
+﻿<ArrayOfSageTableDefinition
+    xmlns="http://schemas.datacontract.org/2004/07/SageClassLibrary.DataModel"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <SageTableDefinition>
+    <ClassId>DocLine</ClassId>
+    <SageMemberInfos>
+      <SageMemberInfo>
+        <CanBeInserted>true</CanBeInserted>
+        <CanBeSelected>true</CanBeSelected>
+        <CanBeUpdated>false</CanBeUpdated>
+        <DefaultValue i:nil="true"/>
+        <FieldName>PIECESPEED</FieldName>
+        <IsIndexed>false</IsIndexed>
+        <Length>17</Length>
+        <MemberName>PieceSpeed</MemberName>
+        <NotNull>false</NotNull>
+        <OdbcType>VarChar</OdbcType>
+        <PrimaryKey>false</PrimaryKey>
+      </SageMemberInfo>
+      <SageMemberInfo>
+        <CanBeInserted>true</CanBeInserted>
+        <CanBeSelected>true</CanBeSelected>
+        <CanBeUpdated>false</CanBeUpdated>
+        <DefaultValue i:nil="true"/>
+        <FieldName>DLD</FieldName>
+        <IsIndexed>false</IsIndexed>
+        <Length>6</Length>
+        <MemberName>DLD</MemberName>
+        <NotNull>false</NotNull>
+        <OdbcType>Double</OdbcType>
+        <PrimaryKey>false</PrimaryKey>
+      </SageMemberInfo>
+    </SageMemberInfos>
+    <tableid>F_DOCLIGNE</tableid>
+  </SageTableDefinition>
+  <SageTableDefinition>
+    <ClassId>DocHeader</ClassId>
+    <SageMemberInfos>
+      <SageMemberInfo>
+        <CanBeInserted>true</CanBeInserted>
+        <CanBeSelected>true</CanBeSelected>
+        <CanBeUpdated>true</CanBeUpdated>
+        <DefaultValue i:nil="true"/>
+        <FieldName>Infos_Libres_2</FieldName>
+        <IsIndexed>false</IsIndexed>
+        <Length>69</Length>
+        <MemberName>Infos_Libres_2</MemberName>
+        <NotNull>false</NotNull>
+        <OdbcType>VarChar</OdbcType>
+        <PrimaryKey>false</PrimaryKey>
+      </SageMemberInfo>
+    <SageMemberInfo>
+      <CanBeInserted>true</CanBeInserted>
+      <CanBeSelected>true</CanBeSelected>
+      <CanBeUpdated>true</CanBeUpdated>
+      <DefaultValue i:nil="true"/>
+      <FieldName>Infos_Libres_1</FieldName>
+      <IsIndexed>false</IsIndexed>
+      <Length>69</Length>
+      <MemberName>Infos_Libres_1</MemberName>
+      <NotNull>false</NotNull>
+      <OdbcType>VarChar</OdbcType>
+      <PrimaryKey>false</PrimaryKey>
+    </SageMemberInfo>
+    </SageMemberInfos>
+    <tableid>F_DOCENTETE</tableid>
+  </SageTableDefinition>
+</ArrayOfSageTableDefinition>

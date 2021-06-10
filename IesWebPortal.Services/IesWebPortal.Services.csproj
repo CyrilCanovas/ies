@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IesWebPortal.Model\IesWebPortal.Model.csproj" />
+    <ProjectReference Include="..\IesWebPortal.Services.Interfaces\IesWebPortal.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\IQToolkit.Data.Odbc\IQToolkit.Data.Odbc.csproj" />
+    <ProjectReference Include="..\IQToolkit.Data.SqlClient\IQToolkit.Data.SqlClient.csproj" />
+    <ProjectReference Include="..\IQToolkit.Data\IQToolkit.Data.csproj" />
+    <ProjectReference Include="..\IQToolkit.Extensions\IQToolkit.Extensions.csproj" />
+    <ProjectReference Include="..\IQToolkit\IQToolkit.csproj" />
+    <ProjectReference Include="..\SageClassLibrary-Ies\SageClassLibrary.csproj" />
+  </ItemGroup>
+
+</Project>

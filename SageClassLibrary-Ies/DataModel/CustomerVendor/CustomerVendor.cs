@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SageClassLibrary.DataModel
+{
+
+    public partial class CustomerVendor : SageObject
+    {
+        public string Tiers;
+        public string Intitule;
+        public int TiersType;
+        public string CgNumPrinc;
+        public string Qualite;
+        public string Classement;
+        public string Contact;
+        public string Adresse;
+        public string Complement;
+        public string Codepostal;
+        public string Ville;
+        public string CodeRegion;
+        public string Pays;
+        public string Raccourci;
+        public int BtNum;
+        public int NDevise;
+        public string Ape;
+        public string Identifiant;
+        public string Siret;
+        public string Stat01;
+        public string Stat02;
+        public string Stat03;
+        public string Stat04;
+        public string Stat05;
+        public string Stat06;
+        public string Stat07;
+        public string Stat08;
+        public string Stat09;
+        public string Stat10;
+        public string Commentaire;
+        public double Encours;
+        public double Assurance;
+        public string NumPayeur;
+        public int NRisque;
+        public int CoNo;
+        public int CatTarif;
+        public double Taux01;
+        public double Taux02;
+        public double Taux03;
+        public double Taux04;
+        public int NCatCompta;
+        public int NPeriod;
+        public int Facture;
+        public int BlFact;
+        public int Langue;
+        public string Edi1;
+        public string Edi2;
+        public string Edi3;
+        public int NExpedition;
+        public int NCondition;
+        public DateTime DateCreate;
+        public int Saut;
+        public int Lettrage;
+        public int ValidEch;
+        public int Sommeil;
+        public int DeNo;
+        public int ControlEnc;
+        public int NoTRappel;
+        public int NAnalytique;
+        public string CaNum;
+        public string Telephone;
+        public string Telecopie;
+        public string Email;
+        public string Site;
+        public string Coface;
+        public int Surveillance;
+        public DateTime SvDateCreate;
+        public string SvformeJuri;
+        public string SvEffectif;
+        public double SvCa;
+        public double SvResultat;
+        public int SvIncident;
+        public DateTime SvDateIncid;
+        public int SvPrivil;
+        public string SvRegul;
+        public string SvCotation;
+        public DateTime SvDateMaj;
+        public string SvObjetMaj;
+        public DateTime SvDateBilan;
+        public int SvNbMoisBilan;
+    }
+}
