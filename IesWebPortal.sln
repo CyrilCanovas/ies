@@ -17,11 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQToolkit.Extensions", "IQT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SageClassLibrary", "SageClassLibrary-Ies\SageClassLibrary.csproj", "{56689C2B-F608-47C4-8426-252814D75C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IesWebPortal.Services", "IesWebPortal.Services\IesWebPortal.Services.csproj", "{4AB5A95A-938A-43B7-A41D-E1EE677D44BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IesWebPortal.Services", "IesWebPortal.Services\IesWebPortal.Services.csproj", "{4AB5A95A-938A-43B7-A41D-E1EE677D44BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IesWebPortal.Services.Interfaces", "IesWebPortal.Services.Interfaces\IesWebPortal.Services.Interfaces.csproj", "{DCD31E8D-56C8-4942-AA0E-11151D15C944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IesWebPortal.Services.Interfaces", "IesWebPortal.Services.Interfaces\IesWebPortal.Services.Interfaces.csproj", "{DCD31E8D-56C8-4942-AA0E-11151D15C944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IesWebPortal.Model", "IesWebPortal.Model\IesWebPortal.Model.csproj", "{821AAA57-986D-43D7-BD09-462F24312386}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IesWebPortal.Model", "IesWebPortal.Model\IesWebPortal.Model.csproj", "{821AAA57-986D-43D7-BD09-462F24312386}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

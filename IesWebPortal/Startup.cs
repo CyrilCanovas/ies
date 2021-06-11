@@ -11,6 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using IesWebPortal.Services.Interfaces;
+using IesWebPortal.Services;
+
 namespace IesWebPortal
 {
     public class Startup
@@ -27,6 +30,13 @@ namespace IesWebPortal
         {
             services.AddControllersWithViews();
             services.AddTransient<SageDataContext>(x => CreateSageDataContext(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IMemoManager>(x => CreateMemoManager(x.GetService<IIesWebPortalSettings>()));
+            services.AddTransient<IDataService>(x => new DataService(x.GetService<SageDataContext>(), x.GetService<IMemoManager>(), null));
+        }
+
+        private static IMemoManager CreateMemoManager(IIesWebPortalSettings iesWebPortalSettings)
+        {
+            return new MemoManager(iesWebPortalSettings.RiskCapture, iesWebPortalSettings.EiniecsCapture, iesWebPortalSettings.UnCapture, iesWebPortalSettings.PictureCapture);
         }
 
         private static SageDataContext CreateSageDataContext(string connStr)

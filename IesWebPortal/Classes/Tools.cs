@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,6 +12,13 @@ namespace IesWebPortal.Classes
 {
     public static class Tools
     {
+
+        public static string MapPath(string path)
+        {
+            return Path.Combine(
+                (string)AppDomain.CurrentDomain.GetData("ContentRootPath"),
+                path);
+        }
         public static string ToUTF8String(this XDocument xdocument)
         {
             string result;
@@ -26,6 +35,12 @@ namespace IesWebPortal.Classes
         }
 
 
+        public static string GetRawUrl(this HttpRequest request)
+        {
+            var httpContext = request.HttpContext;
+            return $"{httpContext.Request.Scheme}://{httpContext.Request.Host}{httpContext.Request.Path}{httpContext.Request.QueryString}";
+            
+        }
 
         public static double GetAsDouble(string value)
         {

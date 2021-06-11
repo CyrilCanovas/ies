@@ -16,13 +16,13 @@ namespace IesWebPortal.Services
         private readonly SageDataContext _sageDataContext;
         private readonly IMemoManager _memoManager;
         private readonly byte[] _emptyPicture;
-        private readonly Func<string, string> _mapPicturePath;
-        public DataService(SageDataContext sageDataContext, IMemoManager memoManager, byte[] emptyPicture, Func<string, string> mapPicturePath)
+        //private readonly Func<string, string> _mapPicturePath;
+        public DataService(SageDataContext sageDataContext, IMemoManager memoManager, byte[] emptyPicture)
         {
             _sageDataContext = sageDataContext;
             _memoManager = memoManager;
             _emptyPicture = emptyPicture;
-            _mapPicturePath = mapPicturePath;
+            //_mapPicturePath = mapPicturePath;
         }
 
         private static Regex flashpoint = new Regex(@"(?<number>\d+)", RegexOptions.Compiled);
@@ -34,7 +34,7 @@ namespace IesWebPortal.Services
             if (match.Success) result = double.Parse(match.Groups["number"].Value);
             return result;
         }
-        public IMLItemInventory[] GetInventories()
+        public IMLItemInventory[] GetInventories(Func<string, string> mapPicturePath)
 
         {
             var itemsinventories = (from i in _sageDataContext.ItemInventories
@@ -50,7 +50,7 @@ namespace IesWebPortal.Services
 
             Array.ForEach(itemsinventories, x => x.DeIntitule = warehouses[x.DeNo].Intitule);
 
-            var dicoiteminfo = GetSubItemsInfos(itemsinventories.Select(x => x.ItemNo).Distinct().ToArray(), string.Empty).ToDictionary(x => x.ItemNo);
+            var dicoiteminfo = GetSubItemsInfos(itemsinventories.Select(x => x.ItemNo).Distinct().ToArray(), string.Empty,mapPicturePath).ToDictionary(x => x.ItemNo);
 
             Array.ForEach(itemsinventories,
                 x =>
@@ -67,7 +67,8 @@ namespace IesWebPortal.Services
         private static string[] _propertyNames = new string[] { nameof(MLItemInfo.Picture1), nameof(MLItemInfo.Picture2), nameof(MLItemInfo.Picture3), nameof(MLItemInfo.Picture4), nameof(MLItemInfo.Picture5) };
         private MLItemInfo[] GetSubItemsInfos(
             string[] itemnos,
-            string codepays
+            string codepays,
+            Func<string, string> mapPicturePath
         )
         {
 
@@ -173,7 +174,7 @@ namespace IesWebPortal.Services
                     if (!files.TryGetValue(value.FileName, out buff))
                     {
 
-                        var filename = _mapPicturePath(value.FileName);
+                        var filename = mapPicturePath(value.FileName);
 
                         try
                         {
