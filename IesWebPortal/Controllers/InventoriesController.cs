@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,11 +13,11 @@ namespace IesWebPortal.Controllers
 {
     //[Route("api/[controller]")]
     //[ApiController]
-    public class FlashPointsController : ControllerBase
+    public class InventoriesController : ControllerBase
     {
         private readonly IDataService _dataService;
         private readonly string _picturePath;
-        public FlashPointsController(IDataService dataService, IIesWebPortalSettings iesWebPortalSettings)
+        public InventoriesController(IDataService dataService, IIesWebPortalSettings iesWebPortalSettings)
         {
             _dataService = dataService;
             _picturePath = iesWebPortalSettings.PicturePath;
@@ -26,37 +25,26 @@ namespace IesWebPortal.Controllers
 
         [HttpGet]
         [EnableQuery()]
-        public IEnumerable<FlashPoint> Get()
+        public IEnumerable<Inventory> Get()
         {
-            var datas = _dataService.GetInventories(x =>
-            {
-                return string.IsNullOrEmpty(_picturePath) ? Tools.MapPath(IesWebPortalConstants.PICTURE_PATH + x) : Path.Combine(_picturePath, x);
-            }
-            );
+            var datas = _dataService.GetItemsLotSerial();
             var result = from i in datas
-
-                         select new FlashPoint()
+                         select new Inventory()
                          {
                              Depot = i.DeIntitule,
                              Reference = i.ItemNo,
+                             NoLot = i.SerialNo ?? string.Empty,
                              Designation = i.Item.Description,
                              CodeFamille = i.Item.Family,
                              QuantiteStock = i.Qty,
-                             Emplacement = i.LocationCode ?? string.Empty,
                              PointEclair = double.IsNaN(i.Item.FlashPoint) ? new double?() : i.Item.FlashPoint,
-                             Coeff = double.IsNaN(i.Item.FlashPoint) ? new double?() : Math.Round(Tools.GetCoeff(i.Item.FlashPoint), 4),
                              CTE = double.IsNaN(i.Item.FlashPoint) ? new double?() : Tools.GetCTE(i.Item.FlashPoint, i.Qty),
-                             PhraseRisque = i.Item.GetRisks().Keys.Count() == 0 ? null : string.Join(",", i.Item.GetRisks().Keys.ToArray()) + ".",
-                             NumeroEiniecs = i.Item.GetEiniecs().Keys.Count() == 0 ? null : i.Item.GetEinecsCodes(),
-                             RID = i.Item.RID,
-                             IMDG = i.Item.IMDG,
-                             ICADIATA = i.Item.ICADIATA,
-                             Pictogramme = i.Item.Files,
-                             UN = i.Item.GetUnMemoStruct() == null ? null : i.Item.GetUnMemoStruct().Description
+                             DateFabrication = i.ManufacturingDate <= SageClassLibrary.DataModel.SageObject.SageMinDate ? new DateTime?() : i.ManufacturingDate,
+                             DatePeremption = i.ExpirationDate <= SageClassLibrary.DataModel.SageObject.SageMinDate ? new DateTime?() : i.ExpirationDate,
+                             Dangeureux = i.Item.Dangerous,
                          };
 
             return result.ToArray();
         }
-
     }
 }

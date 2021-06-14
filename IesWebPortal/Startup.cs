@@ -94,7 +94,7 @@ namespace IesWebPortal
         {
             var odataBuilder = new ODataConventionModelBuilder();
             odataBuilder.EntitySet<FlashPoint>("FlashPoints");
-
+            odataBuilder.EntitySet<Inventory>("Inventories");
             return odataBuilder.GetEdmModel();
         }
 

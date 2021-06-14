@@ -230,5 +230,47 @@ namespace IesWebPortal.Services
             }
             return items;
         }
+
+        public IMLItemLotSerial[] GetItemsLotSerial()
+        {
+            var result = (from i in _sageDataContext.LotSerials
+                          where i.QteRestant > 0
+                          group i by new { i.DeNo, i.RefArticle, i.NoSerie, i.Fabrication, i.Peremption } into a
+                          select new MLItemLotSerial()
+                          {
+                              DeNo = a.Key.DeNo,
+                              ItemNo = a.Key.RefArticle,
+                              SerialNo = a.Key.NoSerie,
+                              ExpirationDate = a.Key.Peremption,
+                              ManufacturingDate = a.Key.Fabrication,
+                              Qty = a.Sum(x => x.QteRestant)
+                          }).ToArray();
+
+            var warehouses = (from i in _sageDataContext.Warehouses
+                              select i).ToDictionary(x => x.DeNo);
+
+            Array.ForEach(result, x => x.DeIntitule = warehouses[x.DeNo].Intitule);
+
+            var itemnos = result.Select(x => x.ItemNo).Distinct().ToArray();
+            var items =
+                DbPager<MLItemInfo>.Get<string>(itemnos,
+                x =>
+                (from i in _sageDataContext.Items
+                 where x.Contains(i.RefArticle)
+                 select new MLItemInfo(null)
+                 {
+                     ItemNo = i.RefArticle,
+                     Description = i.Design,
+                     FlashPoint = GetFlashPoint(i.FlashPoint),
+                     RID = i.RID,
+                     ICADIATA = i.ICADIATA,
+                     IMDG = i.IMDG,
+                     Dangerous = i.DangerousSection,
+                     Family = i.CodeFamille
+                 }).ToArray()).ToDictionary(x => x.ItemNo);
+
+            Array.ForEach(result, x => x.Item = items[x.ItemNo]);
+            return result;
+        }
     }
 }
