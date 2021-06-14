@@ -13,6 +13,10 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using IesWebPortal.Services.Interfaces;
 using IesWebPortal.Services;
+using Microsoft.AspNet.OData.Extensions;
+using Microsoft.OData.Edm;
+using Microsoft.AspNet.OData.Builder;
+using IesWebPortal.Models;
 
 namespace IesWebPortal
 {
@@ -29,6 +33,9 @@ namespace IesWebPortal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddControllers(mvcOptions => mvcOptions.EnableEndpointRouting = false);
+
+            services.AddOData();
             services.AddTransient<SageDataContext>(x => CreateSageDataContext(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IMemoManager>(x => CreateMemoManager(x.GetService<IIesWebPortalSettings>()));
             services.AddTransient<IDataService>(x => new DataService(x.GetService<SageDataContext>(), x.GetService<IMemoManager>(), null));
@@ -73,7 +80,23 @@ namespace IesWebPortal
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            });
+
+            app.UseMvc(routeBuilder =>
+            {
+                routeBuilder.Select().Filter();
+                routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
         }
+
+        IEdmModel GetEdmModel()
+        {
+            var odataBuilder = new ODataConventionModelBuilder();
+            odataBuilder.EntitySet<FlashPoint>("FlashPoints");
+
+            return odataBuilder.GetEdmModel();
+        }
+
     }
 }
