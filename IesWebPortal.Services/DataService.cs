@@ -231,6 +231,40 @@ namespace IesWebPortal.Services
             return items;
         }
 
+        public IMLSalePurchaseHeader[] GetDocHeaders(int docType)
+        {
+            var q = (from i in _sageDataContext.DocHeaders
+                     join a in _sageDataContext.CustomersVendors on i.Tiers equals a.Tiers
+                     join address in _sageDataContext.ShipToAddresses on i.LiNo equals address.LiNo into tmpadresses
+                     from address in tmpadresses.DefaultIfEmpty()
+                     where i.DocType == docType
+                     select new MLSalePurchaseHeader()
+                     {
+                         DocumentType = i.DocType,
+                         DocumentNo = i.Piece,
+                         CustomerVendorNo = i.Tiers,
+                         DeleveryDate = i.DateLivr <= SageClassLibrary.DataModel.SageObject.SageMinDate ? null : new DateTime?(i.DateLivr),
+                         DocumentDate = i.DatePiece,
+                         Reference = i.Reference,
+                         Intitule = a.Intitule,
+                         ToId = i.LiNo,
+                         To = new MLShipTo()
+                         {
+                             LiNo = i.LiNo,
+                             Description = address.Intitule,
+                             Address = address.Adresse,
+                             Address1 = address.Complement,
+                             ZipCode = address.CodePostal,
+                             City = address.Ville,
+                             Country = address.Pays,
+                             Mail = address.Email,
+                             Phone = address.Telephone
+                         }
+                     }).ToArray();
+
+            return q;
+        }
+
         public IMLItemLotSerial[] GetItemsLotSerial()
         {
             var result = (from i in _sageDataContext.LotSerials

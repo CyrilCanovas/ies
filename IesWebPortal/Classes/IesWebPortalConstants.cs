@@ -31,7 +31,6 @@ namespace IesWebPortal.Classes
                                                                     new KeyValuePair<int, string>((int)SageClassLibrary.DataModel.EnumDocType.PurchaseDeliveryNote,"Bon de livraison (achat)")
                                                                 };
 
-
         //public static KeyValuePair<string, LabelConfig>[] CST_REPORTS =
 
         //                                                               (new LabelConfig[]{
@@ -56,7 +55,7 @@ namespace IesWebPortal.Classes
         //                                                                //    RowCount=12
         //                                                                //}
         //                                                                //,
-                                                                    
+
         //                                                                new LabelConfig(){ReportName="Report16x4.rdlc",
         //                                                                    Description="Etiquettes echantillons 16x4",
         //                                                                    Settings=null,

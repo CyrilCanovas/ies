@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,11 +9,22 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
+
 namespace IesWebPortal.Classes
 {
     public static class Tools
     {
+        public static void SetCookie(this HttpResponse reponse,string name, params KeyValuePair<string, string>[] values)
+        {
+            if (values == null) return;
 
+            reponse.Cookies.Append(name, JsonConvert.SerializeObject(values), new CookieOptions() { Expires = DateTime.Now.AddYears(1), HttpOnly = false, Secure = false, });
+            //var cookie = new HttpCookie(name);
+            //cookie.Expires = DateTime.Now.AddYears(1);
+            //foreach (var item in values)
+            //    cookie.Values.Add(item.Key, item.Value);
+            //Response.Cookies.Set(cookie);
+        }
         public static string MapPath(string path)
         {
             return Path.Combine(

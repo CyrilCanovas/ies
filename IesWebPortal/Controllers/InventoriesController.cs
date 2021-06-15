@@ -16,11 +16,11 @@ namespace IesWebPortal.Controllers
     public class InventoriesController : ControllerBase
     {
         private readonly IDataService _dataService;
-        private readonly string _picturePath;
-        public InventoriesController(IDataService dataService, IIesWebPortalSettings iesWebPortalSettings)
+        
+        public InventoriesController(IDataService dataService)
         {
             _dataService = dataService;
-            _picturePath = iesWebPortalSettings.PicturePath;
+
         }
 
         [HttpGet]

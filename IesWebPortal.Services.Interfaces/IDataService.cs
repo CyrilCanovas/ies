@@ -6,5 +6,6 @@ namespace IesWebPortal.Services.Interfaces
     {
         IMLItemInventory[] GetInventories(Func<string, string> mapPicturePath);
         IMLItemLotSerial[] GetItemsLotSerial();
+        IMLSalePurchaseHeader[] GetDocHeaders(int docType);
     }
 }

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<IesWebPortal.Services.Interfaces.IMLSalePurchaseHeader>
+@{
+    //Layout = null;
+    var currentdocumenttype = (ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>).Where(x => x.Selected).Select(x => Int32.Parse(x.Value)).Single();
+    bool ispurchasedocument = (currentdocumenttype == (int)SageClassLibrary.DataModel.EnumDocType.PurchaseOrder) || (currentdocumenttype == (int)SageClassLibrary.DataModel.EnumDocType.PurchaseDeliveryNote);
+}
+<script type="text/javascript">
+    $(function () {
+
+        $('#documenttypeselect').change(function () {
+            var selected = $(this).find("option:selected").val();
+            var form = $(this).closest("form");
+            $('input[name="DocumentType"]').val(selected);
+            form.submit();
+        });
+    });
+
+</script>
+
+<div class="page-header">
+    <h2>Liste des pièces commerciales <small>@Html.Raw((ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>).Where(x => x.Selected).Select(x => x.Text).Single()) <span class="badge badge-info">@Model.Count()</span></small></h2>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeleveryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerVendorNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Intitule)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocumentNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocumentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeleveryDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerVendorNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reference)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Intitule)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
