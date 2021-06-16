@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace IesWebPortal.Services
 {
@@ -263,6 +264,108 @@ namespace IesWebPortal.Services
                      }).ToArray();
 
             return q;
+        }
+
+        public IMLSalePurchaseHeader GetDocHeader(int doctype,string docpiece)
+        {
+            var q = (from i in _sageDataContext.DocHeaders
+                     join a in _sageDataContext.CustomersVendors on i.Tiers equals a.Tiers
+                     where i.DocType == doctype && i.Piece == docpiece
+                     select new MLSalePurchaseHeader()
+                     {
+                         DocumentType = i.DocType,
+                         DocumentNo = i.Piece,
+                         CustomerVendorNo = i.Tiers,
+                         DeleveryDate = i.DateLivr <= SageClassLibrary.DataModel.SageObject.SageMinDate ? null : new DateTime?(i.DateLivr),
+                         DocumentDate = i.DatePiece,
+                         Reference = i.Reference,
+                         ToId = i.LiNo,
+                         Intitule = a.Intitule
+                     }).SingleOrDefault();
+            if (q != null)
+            {
+                q.Lines = GetDocLines( q.DocumentType, q.DocumentNo);
+                if (q.Lines != null) Array.ForEach(q.Lines, x => x.Header = q);
+            }
+
+            return q;
+        }
+
+        private static double GetAsDouble(string value)
+        {
+            double result = 0;
+            if (!string.IsNullOrEmpty(value))
+                try
+                {
+                    result = XmlConvert.ToDouble(value.Replace(",", ".").Trim());
+                }
+                catch
+                {
+                }
+            return result;
+
+        }
+        public  IMLSalePurchaseLine[] GetDocLines(int doctype, string docpiece)
+        {
+            var q = (from i in _sageDataContext.DocLines
+                     where i.DocType == doctype && i.Piece == docpiece
+                     && i.RefArticle != string.Empty
+                     select new MLSalePurchaseLine()
+                     {
+                         DlNo = i.DlNo,
+                         LineNo = i.NoLigne,
+                         ItemNo = i.RefArticle,
+                         Description = i.Designation,
+                         GrossWeight = i.PoidsBrut,
+                         Tare = GetAsDouble(i.Tare),
+                         DocumentNo = i.PieceBC,
+                         //                        BestBeforeDate=
+                         //                        SerialNo
+                         ExtItemNo = i.RefClient,
+                         Qty = i.Qte
+                     }).OrderBy(x => x.LineNo).ToArray();
+
+            Dictionary<int, SageClassLibrary.DataModel.LotSerial[]> dicolotserial = null;
+            var dlnos = q.Select(x => x.DlNo).ToArray();
+            switch ((SageClassLibrary.DataModel.EnumDocType)doctype)
+            {
+                case SageClassLibrary.DataModel.EnumDocType.SalesDeliveryNote:
+                    dicolotserial = (from i in
+                                         ((from i in _sageDataContext.LotSerials
+                                           where dlnos.Contains(i.DlNoOut)
+                                           select i).ToArray())
+                                     group i by i.DlNoOut into a
+                                     select a).ToDictionary(x => x.Key, x => x.ToArray());
+
+                    break;
+                case SageClassLibrary.DataModel.EnumDocType.PurchaseDeliveryNote:
+                    dicolotserial = (from i in
+                                         ((from i in _sageDataContext.LotSerials
+                                           where dlnos.Contains(i.DlNoIn)
+                                           select i).ToArray())
+                                     group i by i.DlNoIn into a
+                                     select a).ToDictionary(x => x.Key, x => x.ToArray());
+                    break;
+            }
+
+            if (dicolotserial != null)
+                foreach (var i in dicolotserial)
+                {
+                    var o = q.Where(x => x.DlNo == i.Key).Single();
+                    o.ManufacturedDate =
+                        i.Value.First().Fabrication <= SageClassLibrary.DataModel.SageObject.SageMinDate ? null : new DateTime?(i.Value.First().Fabrication);
+                    o.SerialNo = i.Value.First().NoSerie;
+                    o.BestBeforeDate =
+                        i.Value.First().Peremption <= SageClassLibrary.DataModel.SageObject.SageMinDate ? null : new DateTime?(i.Value.First().Peremption);
+
+                }
+            var result = q.ToArray();
+            //            var itemnos = result.Select(x => x.ItemNo).Distinct().ToArray();
+
+
+
+
+            return result;
         }
 
         public IMLItemLotSerial[] GetItemsLotSerial()

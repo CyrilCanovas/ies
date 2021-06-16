@@ -13,55 +13,93 @@ namespace IesWebPortal.Controllers
     public class SalePurchaseController : Controller
     {
         private readonly IDataService _dataService;
-        public SalePurchaseController(IDataService dataService)
+        private readonly IMLLabelConfigs _mlLabelConfigs;
+        public SalePurchaseController(IDataService dataService, IMLLabelConfigs mlLabelConfigs)
         {
             _dataService = dataService;
+            _mlLabelConfigs = mlLabelConfigs;
         }
-
         private static int FIRST_DOCUMENT_TYPE = IesWebPortalConstants.CST_DOCUMENTS.First().Key;
         public IActionResult Index(int? documentType, string sortColumn, string sortDirection)
         {
-            //if (documenttype == null)
-            //{
-            //    var cookie = Request.Cookies[Constants.COOKIE_LASTDOCUMENTTYPE];
-            //    var lastdocumenttypestr = cookie == null ? string.Empty : cookie.Value;
-            //    int lastdocumenttype;
-            //    if (!int.TryParse(lastdocumenttypestr, out lastdocumenttype))
-            //        lastdocumenttype = Constants.CST_DOCUMENTS.First().Key;
+            if (documentType == null)
+            {
+                var lastdocumenttypestr = Request.Cookies[IesWebPortalConstants.COOKIE_LASTDOCUMENTTYPE];
+                int lastdocumenttype;
+                if (!int.TryParse(lastdocumenttypestr, out lastdocumenttype))
+                    lastdocumenttype = FIRST_DOCUMENT_TYPE;
 
-            //    return RedirectToAction("Index", GetCurrentControlerName(), new { documenttype = lastdocumenttype, sortcolumn = sortcolumn, sortdirection = sortdirection });
-            //}
-            //if (Request.RequestType == "POST")
-            //    return RedirectToAction("Index", GetCurrentControlerName(), new { documenttype = documenttype, sortcolumn = sortcolumn, sortdirection = sortdirection });
-            //var sagedatacontext = Tools.GetSageDataContext();
+                return RedirectToAction("Index", ControllerContext.GetCurrentControlerName(), new { documenttype = lastdocumenttype, sortcolumn = sortColumn, sortdirection = sortDirection });
+            }
+            if (Request.Method == "POST")
+            {
+                return RedirectToAction("Index", ControllerContext.GetCurrentControlerName(), new { documenttype = documentType, sortcolumn = sortColumn, sortdirection = sortDirection });
+            }
 
             var q = _dataService.GetDocHeaders(documentType ?? FIRST_DOCUMENT_TYPE);
 
-            //ViewBag.SortDirection = string.IsNullOrEmpty(sortdirection) ? SortDirection.Ascending : Enum.Parse(typeof(SortDirection), sortdirection);
-            //ViewBag.SortColumn = string.IsNullOrEmpty(sortcolumn) ? "DocumentNo" : sortcolumn;
+            ViewBag.SortDirection = string.IsNullOrEmpty(sortDirection) ? SortDirection.Ascending : Enum.Parse(typeof(SortDirection), sortDirection);
+            ViewBag.SortColumn = string.IsNullOrEmpty(sortColumn) ? "DocumentNo" : sortColumn;
 
-            //switch ((SortDirection)ViewBag.SortDirection)
-            //{
-            //    case SortDirection.Descending:
-            //        q = q.OrderByDescending(x => GetPropertyValue(x, ViewBag.SortColumn)).ToArray();
-            //        break;
-            //    default:
-            //        q = q.OrderBy(x => GetPropertyValue(x, ViewBag.SortColumn)).ToArray();
-            //        break;
-            //}
+            switch ((SortDirection)ViewBag.SortDirection)
+            {
+                case SortDirection.Descending:
+                    q = q.OrderByDescending(x => Tools.GetPropertyValue(x, ViewBag.SortColumn)).ToArray();
+                    break;
+                default:
+                    q = q.OrderBy(x => Tools.GetPropertyValue(x, ViewBag.SortColumn)).ToArray();
+                    break;
+            }
 
-            //ViewData["DocumentTypeSelectListItems"] = (from i in Constants.CST_DOCUMENTS
-            //                                           select new SelectListItem() { Text = i.Value, Value = i.Key.ToString(), Selected = (i.Key == documenttype) }).ToArray();
             ViewData["DocumentTypeSelectListItems"] = (from i in IesWebPortalConstants.CST_DOCUMENTS
                                                        select new SelectListItem() { Text = i.Value, Value = i.Key.ToString(), Selected = (i.Key == (documentType ??  FIRST_DOCUMENT_TYPE)) }).ToArray();
             Response.SetCookie(
                 IesWebPortalConstants.COOKIE_LASTSORTSALEPURCHASE,
-                    new KeyValuePair<string, string>("SortColumn", ViewBag.SortColumn)
-                //new KeyValuePair<string, string>("SortDirection", ((int)ViewBag.SortDirection ?? 0).ToString())
+                    new KeyValuePair<string, string>("SortColumn", ViewBag.SortColumn),
+                    new KeyValuePair<string, string>("SortDirection", ((int)ViewBag.SortDirection).ToString())
                 );
 
-            //Response.SetCookie(IesWebPortalConstants.COOKIE_LASTDOCUMENTTYPE, documentType.ToString());
-            //return View(q);
+            Response.SetCookie(IesWebPortalConstants.COOKIE_LASTDOCUMENTTYPE, documentType.ToString());
+
+            return View(q);
+        }
+
+        
+        public ActionResult Details(int documenttype, string documentno)
+        {
+            var lastreportname = Request.Cookies[IesWebPortalConstants.COOKIE_LASTREPORTNAME];
+
+            var reportlastlanguage = Request.Cookies["ReportLanguage"];
+
+            var a = (from i in _mlLabelConfigs
+                     select new SelectListItem() { Text = i.Value.Description, Value = i.Key, Selected = (i.Key == lastreportname) }).ToArray();
+
+            if (a.Where(x => x.Selected).Count() == 0) a.First().Selected = true;
+
+            var selectlistitem = a.Where(x => x.Selected).First();
+            ViewData["ReportName"] = selectlistitem.Value;
+            ViewData["ReportListItems"] = a;
+
+            var reportLanguages = (new Dictionary<string, string>() { { string.Empty, "(Défaut)" }, { "SA", "Arabie saoudite" } }).Select(kv => new SelectListItem() { Text = kv.Value, Value = kv.Key, Selected = (kv.Key == reportlastlanguage) }).ToArray();
+
+            if (reportLanguages.Where(x => x.Selected).Count() == 0) reportLanguages.First().Selected = true;
+
+            ViewData["ReportLanguage"] = reportLanguages.Where(x => x.Selected).First().Value;
+            ViewData["ReportLanguages"] = reportLanguages;
+
+            var cookieonlyaddress = Request.Cookies[IesWebPortalConstants.COOKIE_ONLYADDRESS];
+            bool onlyaddress = false;
+            if (cookieonlyaddress != null)
+            {
+                bool.TryParse(cookieonlyaddress, out onlyaddress);
+            }
+            ViewData["OnlyAddress"] = onlyaddress;
+            //var sagedatacontext = Tools.GetSageDataContext();
+            var q = _dataService.GetDocHeader( documenttype, documentno);
+            if (q.Lines != null)
+            {
+                Array.ForEach(q.Lines, x => x.LabelCount = 1);
+            }
             return View(q);
         }
     }

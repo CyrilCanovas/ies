@@ -1,60 +1,143 @@
-﻿@model IEnumerable<IesWebPortal.Services.Interfaces.IMLSalePurchaseHeader>
+﻿@using IesWebPortal.Classes
+@model IEnumerable<IesWebPortal.Services.Interfaces.IMLSalePurchaseHeader>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+
+            $('#documenttypeselect').change(function () {
+                var selected = $(this).find("option:selected").val();
+                var form = $(this).closest("form");
+                $('input[name="documentType"]').val(selected);
+                form.submit();
+            });
+        });
+
+    </script>
+}
 @{
     //Layout = null;
     var currentdocumenttype = (ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>).Where(x => x.Selected).Select(x => Int32.Parse(x.Value)).Single();
     bool ispurchasedocument = (currentdocumenttype == (int)SageClassLibrary.DataModel.EnumDocType.PurchaseOrder) || (currentdocumenttype == (int)SageClassLibrary.DataModel.EnumDocType.PurchaseDeliveryNote);
 }
-<script type="text/javascript">
-    $(function () {
-
-        $('#documenttypeselect').change(function () {
-            var selected = $(this).find("option:selected").val();
-            var form = $(this).closest("form");
-            $('input[name="DocumentType"]').val(selected);
-            form.submit();
-        });
-    });
-
-</script>
 
 <div class="page-header">
-    <h2>Liste des pièces commerciales <small>@Html.Raw((ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>).Where(x => x.Selected).Select(x => x.Text).Single()) <span class="badge badge-info">@Model.Count()</span></small></h2>
+    <h2>Liste des pièces commerciales <small>@Html.Raw((ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>).Where(x => x.Selected).Select(x => x.Text).Single()) <span class="badge bg-secondary">@Model.Count()</span></small></h2>
 </div>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DocumentNo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DocumentDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeleveryDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerVendorNo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reference)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Intitule)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+        @using (Html.BeginForm(
+           "Index",
+          ViewContext.RouteData.Values["controller"].ToString(),
+          new { SortColumn = ViewBag.SortColumn, SortDirection = ViewBag.SortDirection },
+          FormMethod.Post,
+          false,
+          new { id = "form", @class = "form-horizontal", role = "form" }
+       ))
+        {
+            @Html.Hidden("documentType")
+            <div class="col-xs-3 form-inline">
+                <div class="form-group row">
+
+                    <select class="form-control" id="documenttypeselect">
+                        @foreach (var item in (ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>))
+                        {
+                            if (item.Selected)
+                            {
+                                <option value="@Html.Raw(item.Value)" selected="selected">@Html.Raw(item.Text)</option>
+                            }
+                            else
+                            {
+                                <option value="@Html.Raw(item.Value)">@Html.Raw(item.Text)</option>
+                            }
+                        }
+                    </select>
+                    &nbsp;<label for="documenttypeselect" class="control-label"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></label>
+                </div>
+            </div>
+        }
+    </div>
+</nav>
+<div class="table-responsive">
+    <table class="table table-condensed table-striped  table-hover table-vcenter">
+        <thead>
+            <tr class="btn-xs">
+                <th>
+                    @Html.SortBy(model => model.DocumentNo, (string)ViewBag.SortColumn, (SortDirection?)ViewBag.SortDirection, "Index", "SalePurchase", new { documenttype = currentdocumenttype })
+                    @Html.DisplayNameFor(model => model.DocumentNo)
+                </th>
+                <th>
+                    @Html.SortBy(model => model.DocumentDate, (string)ViewBag.SortColumn, (SortDirection?)ViewBag.SortDirection, "Index", "SalePurchase", new { documenttype = currentdocumenttype })
+                    @Html.DisplayNameFor(model => model.DocumentDate)
+                </th>
+                <th>
+                    @Html.SortBy(model => model.DeleveryDate, (string)ViewBag.SortColumn, (SortDirection?)ViewBag.SortDirection, "Index", "SalePurchase", new { documenttype = currentdocumenttype })
+                    @Html.DisplayNameFor(model => model.DeleveryDate)
+                </th>
+                <th>
+                    @Html.SortBy(model => model.CustomerVendorNo, (string)ViewBag.SortColumn, (SortDirection?)ViewBag.SortDirection, "Index", "SalePurchase", new { documenttype = currentdocumenttype })
+                    @Html.DisplayNameFor(model => model.CustomerVendorNo)
+                </th>
+                <th>
+                    @Html.SortBy(model => model.Reference, (string)ViewBag.SortColumn, (SortDirection?)ViewBag.SortDirection, "Index", "SalePurchase", new { documenttype = currentdocumenttype })
+                    @Html.DisplayNameFor(model => model.Reference)
+                </th>
+                <th>
+                    @Html.SortBy(model => model.Intitule, (string)ViewBag.SortColumn, (SortDirection?)ViewBag.SortDirection, "Index", "SalePurchase", new { documenttype = currentdocumenttype })
+                    @Html.DisplayNameFor(model => model.Intitule)
+                </th>
+                @if (!ispurchasedocument)
+                {
+                    <th>
+                        @*@Html.SortBy(model => model.To.Description, (object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.Description)
+                    </th>
+                    <th>
+                        @*@Html.SortBy(model => model.To.Address,(object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.Address)
+                    </th>
+                    <th>
+                        @*@Html.SortBy(model => model.To.Address1, (object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.Address1)
+                    </th>
+                    <th>
+                        @*@Html.SortBy(model => model.To.ZipCode, (object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.ZipCode)
+                    </th>
+                    <th>
+                        @*@Html.SortBy(model => model.To.City, (object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.City)
+                    </th>
+                    <th>
+                        @*@Html.SortBy(model => model.To.Country, (object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.Country)
+                    </th>
+                    <th>
+                        @*@Html.SortBy(model => model.To.Mail, (object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.Mail)
+                    </th>
+                    <th>
+                        @*@Html.SortBy(model => model.To.Phone, (object)ViewBag)*@
+                        @Html.DisplayNameFor(model => model.To.Phone)
+                    </th>
+                }
+            </tr>
+        </thead>
+
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DocumentNo)
+                    <a href="@Url.Action("Details","SalePurchase",new { documenttype= currentdocumenttype,documentno=item.DocumentNo})" class="btn btn-primary" role="button">
+                        <span class="bi-zoom-in" aria-hidden="true"></span> @Html.DisplayFor(modelItem => item.DocumentNo)
+                    </a>
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.DocumentDate)
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.DeleveryDate)
                 </td>
                 <td>
@@ -67,11 +150,34 @@
                     @Html.DisplayFor(modelItem => item.Intitule)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.DisplayFor(modelItem => item.To.Description)
                 </td>
+                @if (!ispurchasedocument)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To.Address1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To.ZipCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To.Country)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To.Mail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To.Phone)
+                    </td>
+                }
             </tr>
         }
-    </tbody>
-</table>
+
+    </table>
+</div>

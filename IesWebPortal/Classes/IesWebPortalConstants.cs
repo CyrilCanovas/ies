@@ -31,41 +31,6 @@ namespace IesWebPortal.Classes
                                                                     new KeyValuePair<int, string>((int)SageClassLibrary.DataModel.EnumDocType.PurchaseDeliveryNote,"Bon de livraison (achat)")
                                                                 };
 
-        //public static KeyValuePair<string, LabelConfig>[] CST_REPORTS =
 
-        //                                                               (new LabelConfig[]{
-        //                                                                new LabelConfig(){ReportName="BigLabel.rdlc",
-        //                                                                    Description="Etiquettes grand format",
-        //                                                                    Settings=global::IesWebPortal.Properties.Settings.Default.BigLabelSettings
-        //                                                                },
-        //                                                                new LabelConfig(){ReportName="SmallLabel.rdlc",
-        //                                                                    Description="Etiquettes petit format",
-        //                                                                    Settings=global::IesWebPortal.Properties.Settings.Default.SmallLabelSettings
-        //                                                                },
-        //                                                                new LabelConfig(){ReportName="SampleLabel.rdlc",
-        //                                                                    Description="Etiquettes echantillons",
-        //                                                                    Settings=global::IesWebPortal.Properties.Settings.Default.SampleLabelSettings,
-        //                                                                    //Settings=global::IesWebPortal.Properties.Settings.Default.    
-        //                                                                }
-        //                                                                ,
-        //                                                                //new LabelConfig(){ReportName="Report12x3.rdlc",
-        //                                                                //    Description="Etiquettes echantillons 12x3 (ancien)",
-        //                                                                //    Settings=null,
-        //                                                                //    ColCount=3,
-        //                                                                //    RowCount=12
-        //                                                                //}
-        //                                                                //,
-
-        //                                                                new LabelConfig(){ReportName="Report16x4.rdlc",
-        //                                                                    Description="Etiquettes echantillons 16x4",
-        //                                                                    Settings=null,
-        //                                                                    ColCount=4,
-        //                                                                    RowCount=16
-        //                                                                },
-        //                                                                new LabelConfig(){ReportName="DeliveryLabel.rdlc",
-        //                                                                    Description="Etiquette livraison client",
-        //                                                                    Settings=global::IesWebPortal.Properties.Settings.Default.DeliveryLabelSettings
-        //                                                                }
-        //                                                               }).Select(x => new KeyValuePair<string, LabelConfig>(x.ReportName, x)).ToArray();
     }
 }

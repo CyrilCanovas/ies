@@ -1,0 +1,283 @@
+﻿@using IesWebPortal.Classes
+@model IesWebPortal.Services.Interfaces.IMLSalePurchaseHeader
+@{
+    ViewBag.Title = "Details";
+}
+@section scripts
+{
+    <script type="text/javascript">
+    String.prototype.format = function () {
+        var formatted = this;
+        for (arg in arguments) {
+            formatted = formatted.replace("{" + arg + "}", arguments[arg]);
+        }
+        return formatted;
+    };
+
+    function getTable(col, row, defaultvalue) {
+        var strings = new Array();
+        strings.push('<table class="table table-condensed table-vcenter table-responsive">');
+        var coltemplate = '<th  style="text-align: center !important;">{0}</th>';
+        strings.push('<tr><th  style="text-align: center !important;">&nbsp;</th>');
+        for (i = 0; i < col; i++) {
+            strings.push(coltemplate.format(i + 1));
+        }
+        strings.push('</tr>');
+
+        var celltemplate = '<td style="text-align: center !important;"><input type="radio" name="radios" value="{0}" {1}/></td>';
+        var rowtemplate = '<tr><th>{0}</th>';
+
+        for (j = 0; j < row; j++) {
+            strings.push(rowtemplate.format(j + 1));
+            for (i = 0; i < col; i++) {
+                var checked = '';
+                var value = row * i + j + 1;
+                if (value == defaultvalue) {
+                    checked = 'checked="checked"';
+                }
+                strings.push(celltemplate.format(value, checked));
+
+            }
+            strings.push('</tr>');
+        }
+        strings.push('</table>');
+        return strings.join('');
+    }
+
+    function getreportlist() {
+        @*var result = new Object();
+        @foreach (var item in IesWebPortal.Classes.Constants.CST_REPORTS) {
+            <text>
+            var obj = new Object();
+            @string.Format("obj.ColCount={0};", item.Value.ColCount)
+            @string.Format("obj.RowCount={0};", item.Value.RowCount)
+            result['@item.Value.ReportName']= obj;
+            </text>
+        }*@
+        return result;
+    }
+    $(function () {
+
+        $('#shiftwindow').dialog({
+            autoOpen: false,
+            draggable: true,
+            modal: true,
+            title: "Sélectionner le décalage",
+            open: function () {
+                var defaultvalue = parseInt($('input[name="ShiftTagCount"]').val());
+                if (isNaN(defaultvalue)) defaultvalue = 1;
+                var parentcontrol = $(this);
+                parentcontrol.empty();
+                var reportlist = getreportlist();
+                var report = reportlist[$('input[name="ReportName"]').val()];
+                if (report.ColCount == 0 && report.RowCount == 0) {
+                    parentcontrol.dialog("close");
+                    return;
+                }
+                var table = $(getTable(report.ColCount, report.RowCount, defaultvalue));
+                table.find('input').bind('click',
+                                    function (event) {
+                                        $('input[name="ShiftTagCount"]').val(event.target.value);
+                                        parentcontrol.dialog("close");
+                                    });
+                table.appendTo(parentcontrol);
+            },
+        });
+
+        $('#reportlanguage').change(function () {
+            var selected = $(this).find("option:selected").val();
+            var form = $(this).closest("form");
+            $('input[name="ReportLanguage"]').val(selected);
+        });
+
+        $('#reportselect').change(function () {
+            var selected = $(this).find("option:selected").val();
+            var form = $(this).closest("form");
+            $('input[name="ReportName"]').val(selected);
+        });
+
+        $('#btnselectshift').on('click', function (e) {
+            $('#shiftwindow').dialog("open");
+        });
+
+        $('#btnprint').on('click', function (e) {
+            var form = $(this).closest("form");
+            form.submit();
+        });
+    });
+
+    </script>
+}
+
+<div class="page-header">
+    <h2>Détails de la pièce<small> N°@Html.Raw(string.IsNullOrWhiteSpace(Model.Reference) ? Model.DocumentNo : string.Format("{0} - {1}", Model.DocumentNo, Model.Reference))</small></h2>
+</div>
+<div>
+    <div id="shiftwindow" style="text-align: center">
+    </div>
+    @using (Html.BeginForm("Print", ViewContext.RouteData.Values["controller"].ToString(),
+                                               new { documenttype = Model.DocumentType, documentno = Model.DocumentNo },
+                                               FormMethod.Post, new { id = "form", @class = "form-horizontal", role = "form" }))
+    {
+        @Html.Hidden("ReportLanguage", ViewData["ReportLanguage"])
+        @Html.Hidden("ReportName", ViewData["ReportName"])
+
+        <div class="form-inline container-fluid">
+            <div class="row form-group">
+                <input type="text" name="ShiftTagCount" class="form-control" style="width: 60px;text-align: right;height:auto;" />
+                <button type="button" id="btnselectshift" class="btn btn-success btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                </button>
+
+                <select class="form-control" id="reportselect">
+                    @foreach (var item in (ViewData["ReportListItems"] as IEnumerable<SelectListItem>))
+                    {
+                        <option value="@Html.Raw(item.Value)" @Html.Raw(item.Selected ? "selected" : string.Empty)>@Html.Raw(item.Text)</option>
+                    }
+                </select>
+                <button type="button" id="btnprint" class="btn btn-primary btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimer
+                </button>
+                <select class="form-control" id="reportlanguage">
+                    @foreach (var item in (ViewData["ReportLanguages"] as IEnumerable<SelectListItem>))
+                    {
+                        <option value="@Html.Raw(item.Value)" @Html.Raw(item.Selected ? "selected" : string.Empty)>@Html.Raw(item.Text)</option>
+                    }
+                </select>
+                <input type="checkbox" id="xPrinting" name="OnlyAddressCkBox" value="true" @Html.Raw((bool)ViewData["OnlyAddress"] ? "checked" : "")>
+                @Html.Label("OnlyAddressCkBox", "Adresse seulement")
+            </div>
+        </div>
+        <br />
+        <div class="panel panel-default">
+            <div style="margin-top:10px;">
+                <dl class="dl-horizontal" style="margin-bottom:10px;">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DocumentNo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DocumentNo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DocumentDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DocumentDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DeleveryDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DeleveryDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CustomerVendorNo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CustomerVendorNo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Reference)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Reference)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Intitule)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Intitule)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <table class="table table-condensed table-striped  table-hover table-vcenter  table-responsive">
+            <thead>
+                <tr class="btn-xs">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().ItemNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().ExtItemNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().Qty)
+                    </th>
+                    <th>
+                        Poids net
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().Tare)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().LabelCount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().BestBeforeDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().ManufacturedDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lines.FirstOrDefault().SerialNo)
+                    </th>
+                </tr>
+            </thead>
+            @for (int i = 0; i < Model.Lines.Count(); i++)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Lines[i].ItemNo)
+                        @Html.HiddenFor(modelItem => Model.Lines[i].DlNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Lines[i].ExtItemNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Lines[i].Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Lines[i].Qty)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].Qty, new { style = "text-align: right; width: 60px;" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].Tare, new { style = "text-align: right; width: 40px;" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].LabelCount, new { style = "text-align: right; width: 40px;" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].BestBeforeDate, "{0:dd/MM/yy}", new { style = "text-align: center; width: 70px;" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].ManufacturedDate, "{0:dd/MM/yy}", new { style = "text-align: center; width: 70px;" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].SerialNo)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

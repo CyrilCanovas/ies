@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,11 +16,45 @@ namespace IesWebPortal.Classes
 {
     public static class Tools
     {
+
+        public static string GetMetricsCurrentResourceName(this HttpContext httpContext)
+        {
+            if (httpContext == null)
+                throw new ArgumentNullException(nameof(httpContext));
+
+            Endpoint endpoint = httpContext.GetEndpoint();
+            return endpoint?.Metadata.GetMetadata<EndpointNameMetadata>()?.EndpointName;
+        }
+
+        public static object GetPropertyValue(this object obj, string property)
+        {
+            System.Reflection.PropertyInfo propertyInfo = obj.GetType().GetProperty(property);
+            return propertyInfo.GetValue(obj, null);
+        }
+
+        public static string GetCurrentControlerName(this ControllerContext controllerContext)
+        {
+            return (string)controllerContext.RouteData.Values["controler"];
+        }
+
+
         public static void SetCookie(this HttpResponse reponse,string name, params KeyValuePair<string, string>[] values)
         {
             if (values == null) return;
 
-            reponse.Cookies.Append(name, JsonConvert.SerializeObject(values), new CookieOptions() { Expires = DateTime.Now.AddYears(1), HttpOnly = false, Secure = false, });
+            reponse.Cookies.Append(name, JsonConvert.SerializeObject(values), new CookieOptions() { Expires = DateTime.Now.AddYears(1), HttpOnly = false, Secure = false, SameSite = SameSiteMode.Strict});
+            //var cookie = new HttpCookie(name);
+            //cookie.Expires = DateTime.Now.AddYears(1);
+            //foreach (var item in values)
+            //    cookie.Values.Add(item.Key, item.Value);
+            //Response.Cookies.Set(cookie);
+        }
+
+        public static void SetCookie(this HttpResponse reponse, string name, string value)
+        {
+            if (value == null) return;
+
+            reponse.Cookies.Append(name, value, new CookieOptions() { Expires = DateTime.Now.AddYears(1), HttpOnly = false, Secure = false, SameSite = SameSiteMode.Strict });
             //var cookie = new HttpCookie(name);
             //cookie.Expires = DateTime.Now.AddYears(1);
             //foreach (var item in values)

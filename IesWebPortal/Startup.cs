@@ -17,6 +17,7 @@ using Microsoft.AspNet.OData.Extensions;
 using Microsoft.OData.Edm;
 using Microsoft.AspNet.OData.Builder;
 using IesWebPortal.Models;
+using IesWebPortal.Model;
 
 namespace IesWebPortal
 {
@@ -39,6 +40,7 @@ namespace IesWebPortal
             services.AddTransient<SageDataContext>(x => CreateSageDataContext(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IMemoManager>(x => CreateMemoManager(x.GetService<IIesWebPortalSettings>()));
             services.AddTransient<IDataService>(x => new DataService(x.GetService<SageDataContext>(), x.GetService<IMemoManager>(), null));
+            services.AddSingleton<IMLLabelConfigs>(x => GetLabelConfigs(x.GetService<IIesWebPortalSettings>()));
         }
 
         private static IMemoManager CreateMemoManager(IIesWebPortalSettings iesWebPortalSettings)
@@ -90,12 +92,61 @@ namespace IesWebPortal
             });
         }
 
-        IEdmModel GetEdmModel()
+        private static IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
             odataBuilder.EntitySet<FlashPoint>("FlashPoints");
             odataBuilder.EntitySet<Inventory>("Inventories");
             return odataBuilder.GetEdmModel();
+        }
+
+        private static IMLLabelConfigs GetLabelConfigs(IIesWebPortalSettings iesWebPortalSettings)
+        {
+            var configs =
+                new MLLabelConfig[] {
+                    new MLLabelConfig()
+                    {
+                        ReportName = "BigLabel.rdlc",
+                        Description = "Etiquettes grand format",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("BigLabelSettings") ? iesWebPortalSettings.LabelSettings["BigLabelSettings"] : string.Empty
+                    },
+                    new MLLabelConfig()
+                    {
+                        ReportName = "SmallLabel.rdlc",
+                        Description = "Etiquettes petit format",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("SmallLabelSettings") ? iesWebPortalSettings.LabelSettings["SmallLabelSettings"] : string.Empty
+                    },
+                    new MLLabelConfig()
+                    {
+                        ReportName = "SampleLabel.rdlc",
+                        Description = "Etiquettes echantillons",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("SampleLabelSettings") ? iesWebPortalSettings.LabelSettings["SampleLabelSettings"] : string.Empty
+                        //Settings=global::IesWebPortal.Properties.Settings.Default.    
+                    }
+                    ,
+                    //new LabelConfig(){ReportName="Report12x3.rdlc",
+                    //    Description="Etiquettes echantillons 12x3 (ancien)",
+                    //    Settings=null,
+                    //    ColCount=3,
+                    //    RowCount=12
+                    //}
+                    //,
+                    new MLLabelConfig()
+                    {
+                        ReportName = "Report16x4.rdlc",
+                        Description = "Etiquettes echantillons 16x4",
+                        Settings = null,
+                        ColCount = 4,
+                        RowCount = 16
+                    },
+                    new MLLabelConfig()
+                    {
+                        ReportName = "DeliveryLabel.rdlc",
+                        Description = "Etiquette livraison client",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("DeliveryLabelSettings") ? iesWebPortalSettings.LabelSettings["DeliveryLabelSettings"] : string.Empty
+                    }
+                };
+            return new MLLabelConfigs(configs);
         }
 
     }
