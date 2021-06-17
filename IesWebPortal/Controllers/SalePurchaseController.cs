@@ -1,10 +1,13 @@
 ﻿using IesWebPortal.Classes;
+using IesWebPortal.Model;
 using IesWebPortal.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Net.Http.Headers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
 
 
@@ -68,7 +71,7 @@ namespace IesWebPortal.Controllers
         public ActionResult Details(int documenttype, string documentno)
         {
             var lastreportname = Request.Cookies[IesWebPortalConstants.COOKIE_LASTREPORTNAME];
-
+            ViewData["Reports"] = _mlLabelConfigs;
             var reportlastlanguage = Request.Cookies["ReportLanguage"];
 
             var a = (from i in _mlLabelConfigs
@@ -94,13 +97,25 @@ namespace IesWebPortal.Controllers
                 bool.TryParse(cookieonlyaddress, out onlyaddress);
             }
             ViewData["OnlyAddress"] = onlyaddress;
-            //var sagedatacontext = Tools.GetSageDataContext();
+            
             var q = _dataService.GetDocHeader( documenttype, documentno);
             if (q.Lines != null)
             {
                 Array.ForEach(q.Lines, x => x.LabelCount = 1);
             }
             return View(q);
+        }
+        [HttpPost]
+        public FileContentResult Print()
+        {
+            //Response.Headers.Add("content-disposition", "inline;filename=" + model.DocumentNo + ".pdf");
+            var result = System.IO.File.ReadAllBytes("test.pdf");
+            var contentresult = new FileContentResult(result, MediaTypeHeaderValue.Parse("application/pdf"));
+            //Tools.SetCookie(Reponse,"ReportLanguage", reportlanguage);
+            //SetCookie(Constants.COOKIE_LASTREPORTNAME, reportname);
+            //SetCookie(Constants.COOKIE_ONLYADDRESS, onlyaddress.ToString());
+            return contentresult;
+
         }
     }
 }

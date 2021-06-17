@@ -1,12 +1,109 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@section scripts
+{
+    <script type="text/javascript">
 
+        String.prototype.format = function () {
+            var formatted = this;
+            for (arg in arguments) {
+                formatted = formatted.replace("{" + arg + "}", arguments[arg]);
+            }
+            return formatted;
+        };
+        function getTable(col, row, defaultvalue) {
+            var strings = new Array();
+            strings.push('<table class="table table-condensed table-vcenter table-responsive">');
+            var coltemplate = '<th  style="text-align: center !important;">{0}</th>';
+            strings.push('<tr><th  style="text-align: center !important;">&nbsp;</th>');
+            for (i = 0; i < col; i++) {
+                strings.push(coltemplate.format(i + 1));
+            }
+            strings.push('</tr>');
+
+            var celltemplate = '<td style="text-align: center !important;"><input type="radio" name="radios" value="{0}" {1}/></td>';
+            var rowtemplate = '<tr><th>{0}</th>';
+
+            for (j = 0; j < row; j++) {
+                strings.push(rowtemplate.format(j + 1));
+                for (i = 0; i < col; i++) {
+                    var checked = '';
+                    var value = row * i + j + 1;
+                    if (value == defaultvalue) {
+                        checked = 'checked="checked"';
+                    }
+                    strings.push(celltemplate.format(value, checked));
+
+                }
+                strings.push('</tr>');
+            }
+            strings.push('</table>');
+            return strings.join('');
+        }
+        function testClick() {
+            var rawHtml = getTable(3, 4, 2);
+            $("#modalBody").html(rawHtml);
+            $('#modalLabelShift').modal('show');
+            //$("#dialogTagModalResult").val(false);
+            //$("#dialogTag").off(
+            //    $.modal.AFTER_CLOSE
+            //);
+            //$("#dialogTag").on(
+            //    $.modal.AFTER_CLOSE,
+            //    function (event, modal) {
+            //        var radioValue = $("input[name='radios']:checked").val();
+            //        if (radioValue) {
+            //            $('input[name="ShiftTagCount"]').val(radioValue);
+            //        }
+            //    }
+            //);
+            
+            //$("#dialogTag").modal();
+
+        }
+
+        $(function () {
+            $('#btnClose').on("click", function (e) {
+                $('#modalLabelShift').modal('hide');
+            });
+
+            $('#btnOK').on("click", function (e) {
+                var radioValue = $("input[name='radios']:checked").val();
+                if (radioValue) {
+                    $('input[name="ShiftTagCount"]').val(radioValue);
+                }
+                $('#modalLabelShift').modal('hide');
+            });
+
+        });
+    </script>
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" onclick="testClick();">
         Profile <span class="badge badge-light">9</span>
         <span class="sr-only">unread messages</span>
+        
+        <input name="ShiftTagCount" type="text" />
+        
     </button>
+
+    <div class="modal fade" id="modalLabelShift" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLongTitle">Décalage</h5>
+                </div>
+                <div id="modalBody" class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnClose">Close</button>
+                    <button type="button" class="btn btn-primary"id="btnOK" >OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

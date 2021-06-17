@@ -19,6 +19,7 @@ using Microsoft.AspNet.OData.Builder;
 using IesWebPortal.Models;
 using IesWebPortal.Model;
 
+
 namespace IesWebPortal
 {
     public class Startup
@@ -40,7 +41,10 @@ namespace IesWebPortal
             services.AddTransient<SageDataContext>(x => CreateSageDataContext(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IMemoManager>(x => CreateMemoManager(x.GetService<IIesWebPortalSettings>()));
             services.AddTransient<IDataService>(x => new DataService(x.GetService<SageDataContext>(), x.GetService<IMemoManager>(), null));
+            
             services.AddSingleton<IMLLabelConfigs>(x => GetLabelConfigs(x.GetService<IIesWebPortalSettings>()));
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         private static IMemoManager CreateMemoManager(IIesWebPortalSettings iesWebPortalSettings)
