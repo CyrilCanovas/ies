@@ -51,7 +51,7 @@ namespace IesWebPortal.Services
 
             Array.ForEach(itemsinventories, x => x.DeIntitule = warehouses[x.DeNo].Intitule);
 
-            var dicoiteminfo = GetSubItemsInfos(itemsinventories.Select(x => x.ItemNo).Distinct().ToArray(), string.Empty,mapPicturePath).ToDictionary(x => x.ItemNo);
+            var dicoiteminfo = GetSubItemsInfos(itemsinventories.Select(x => x.ItemNo).Distinct().ToArray(), string.Empty, mapPicturePath).ToDictionary(x => x.ItemNo);
 
             Array.ForEach(itemsinventories,
                 x =>
@@ -266,7 +266,7 @@ namespace IesWebPortal.Services
             return q;
         }
 
-        public IMLSalePurchaseHeader GetDocHeader(int doctype,string docpiece)
+        public IMLSalePurchaseHeader GetDocHeader(int doctype, string docpiece)
         {
             var q = (from i in _sageDataContext.DocHeaders
                      join a in _sageDataContext.CustomersVendors on i.Tiers equals a.Tiers
@@ -284,13 +284,55 @@ namespace IesWebPortal.Services
                      }).SingleOrDefault();
             if (q != null)
             {
-                q.Lines = GetDocLines( q.DocumentType, q.DocumentNo);
+                q.Lines = GetDocLines(q.DocumentType, q.DocumentNo);
                 if (q.Lines != null) Array.ForEach(q.Lines, x => x.Header = q);
             }
 
             return q;
         }
+        private MLShipTo GetShipTo(int lino)
+        {
+            var q = (from i in _sageDataContext.ShipToAddresses
+                     where i.LiNo == lino
+                     select new MLShipTo()
+                     {
+                         LiNo = i.LiNo,
+                         Description = i.Intitule,
+                         Address = i.Adresse,
+                         Address1 = i.Complement,
+                         ZipCode = i.CodePostal,
+                         City = i.Ville,
+                         Country = i.Pays,
+                         Phone = i.Telephone,
+                         Fax = i.Telecopie,
+                         Mail = i.Email,
+                     }
+                    ).SingleOrDefault();
 
+            return q;
+        }
+        private void FillDocLines(IMLSalePurchaseLine[] doclines, string codepays, Func<string, string> mapPicturePath)
+        {
+            var items = GetSubItemsInfos(doclines.Select(x => x.ItemNo).Distinct().ToArray(), codepays, mapPicturePath).ToDictionary(x => x.ItemNo);
+
+            Array.ForEach(doclines, x =>
+            {
+                if (x.ItemNo == null) return;
+                if (items.ContainsKey(x.ItemNo)) x.Item = items[x.ItemNo];
+            }
+            );
+        }
+        public IMLSalePurchaseHeader FillLabels(IMLSalePurchaseHeader mlSalePurchaseHeader, string codepays, Func<string, string> mapPicturePath)
+        {
+            mlSalePurchaseHeader.To = GetShipTo(mlSalePurchaseHeader.ToId);
+            FillDocLines( mlSalePurchaseHeader.Lines, codepays, mapPicturePath);
+            Array.ForEach(mlSalePurchaseHeader.Lines, x => x.Header = mlSalePurchaseHeader);
+            return mlSalePurchaseHeader;
+        }
+        public IDictionary<string, string> ItemToVendor(string[] itemNos)
+        { 
+            return _sageDataContext.ItemVendors.Where(x => itemNos.Contains(x.ItemNo) && x.Principal == 1).ToDictionary(x => x.ItemNo, x => x.CustomerNo);
+        }
         private static double GetAsDouble(string value)
         {
             double result = 0;

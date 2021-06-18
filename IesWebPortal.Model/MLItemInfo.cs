@@ -27,8 +27,6 @@ namespace IesWebPortal.Model
         {
 
         }
-
-
         public void SetRisks(Dictionary<string, IMLMemoStruct[]> keyValuePairs)
         {
             _risks = keyValuePairs;

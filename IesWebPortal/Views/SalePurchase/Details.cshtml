@@ -173,8 +173,8 @@ new { id = "form", @class = "form-horizontal", role = "form" }))
                     }
                 }
             </select>
-            <input type="checkbox" id="xPrinting" name="OnlyAddressCkBox" value="true" @Html.Raw((bool)ViewData["OnlyAddress"] ? "checked" : "")>
-            @Html.Label("OnlyAddressCkBox", "Adresse seulement")
+            <input type="checkbox" name="OnlyAddress" value="true" @Html.Raw((bool)ViewData["OnlyAddress"] ? "checked" : "")>
+            @Html.Label("OnlyAddress", "Adresse seulement")
         </div>
     </div>
     <br />

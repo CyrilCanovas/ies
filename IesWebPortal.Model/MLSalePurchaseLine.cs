@@ -12,59 +12,38 @@ namespace IesWebPortal.Model
     public class MLSalePurchaseLine : IMLSalePurchaseLine
     {
 
-        [DisplayName("Date document")]
-        [ScaffoldColumn(false)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]
         public DateTime? DocumentDate { get; set; }
 
 
-        [DisplayName("Identifiant")]
-        [ScaffoldColumn(false)]
         public int DlNo { get; set; }
 
-        [DisplayName("N° ligne")]
-        [ScaffoldColumn(false)]
         public int LineNo { get; set; }
 
-        [DisplayName("Réf.")]
+        
         public string ItemNo { get; set; }
 
-        [DisplayName("Réf. externe (article)")]
+        
         public string ExtItemNo { get; set; }
 
-        [DisplayName("Désignation")]
+        
         public string Description { get; set; }
 
-        [DisplayName("Qté")]
+        
         public double Qty { get; set; }
 
-        [DisplayName("Nbr étiquettes")]
-        public double LabelCount { get; set; }
+        
+        public int LabelCount { get; set; }
 
-        [DisplayName("N° Lot")]
-        [ScaffoldColumn(false)]
         public string SerialNo { get; set; }
 
-        [DisplayName("Fabrication")]
-        [ScaffoldColumn(false)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yy}", ApplyFormatInEditMode = true)]
         public DateTime? ManufacturedDate { get; set; }
 
-        [DisplayName("Péremption")]
-        [ScaffoldColumn(false)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yy}", ApplyFormatInEditMode = true)]
         public DateTime? BestBeforeDate { get; set; }
 
-        [DisplayName("Poids brut")]
-        [ScaffoldColumn(false)]
         public double GrossWeight { get; set; }
 
-        [DisplayName("Tare")]
-        [ScaffoldColumn(false)]
         public double Tare { get; set; }
 
-        [DisplayName("Image1")]
-        [ScaffoldColumn(false)]
         public byte[] Picture1
         {
             get
@@ -73,8 +52,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [DisplayName("Image2")]
-        [ScaffoldColumn(false)]
+
         public byte[] Picture2
         {
             get
@@ -83,8 +61,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [DisplayName("Image3")]
-        [ScaffoldColumn(false)]
+
         public byte[] Picture3
         {
             get
@@ -93,8 +70,6 @@ namespace IesWebPortal.Model
             }
         }
 
-        [DisplayName("Image4")]
-        [ScaffoldColumn(false)]
         public byte[] Picture4
         {
             get
@@ -103,8 +78,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [DisplayName("Image5")]
-        [ScaffoldColumn(false)]
+
         public byte[] Picture5
         {
             get
@@ -113,14 +87,12 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public IMLSalePurchaseHeader Header { get; set; }
 
         #region Header properties
 
         private string documentno;
-
-        [DisplayName("No document")]
         public string DocumentNo
         {
             get
@@ -137,8 +109,6 @@ namespace IesWebPortal.Model
 
         private string reference;
 
-        [ScaffoldColumn(false)]
-        [DisplayName("Reference")]
         public string Reference
         {
             get
@@ -155,8 +125,6 @@ namespace IesWebPortal.Model
 
         private string intitule;
 
-        [ScaffoldColumn(false)]
-        [DisplayName("Intitule")]
         public string Intitule
         {
             get
@@ -172,12 +140,11 @@ namespace IesWebPortal.Model
         }
         #endregion
 
-        [ScaffoldColumn(false)]
+        
         public IMLItemInfo Item { get; set; }
         #region Item properties
 
-        [ScaffoldColumn(false)]
-        [DisplayName("Point éclair")]
+
         public string FlashPoint
         {
             get
@@ -186,8 +153,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
-        [DisplayName("Rubrique dangeureux français")]
+
         public string DangerousFrench
         {
             get
@@ -196,8 +162,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
-        [DisplayName("Rubrique dangeureux english")]
+
         public string DangerousEnglish
         {
             get
@@ -205,8 +170,6 @@ namespace IesWebPortal.Model
                 return Item == null ? string.Empty : Item.DangerousEnglish;
             }
         }
-
-        [ScaffoldColumn(false)]
         public string RisksOthersFR
         {
             get
@@ -214,8 +177,6 @@ namespace IesWebPortal.Model
                 return Item == null ? string.Empty : Item.GetRisksOthers(ELanguages.French);
             }
         }
-
-        [ScaffoldColumn(false)]
         public string RisksOthersEN
         {
             get
@@ -224,7 +185,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string RisksPFR
         {
             get
@@ -233,7 +194,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string RisksPEN
         {
             get
@@ -242,7 +203,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string EinecsCodes
         {
             get
@@ -250,7 +211,7 @@ namespace IesWebPortal.Model
                 return Item == null ? string.Empty : Item.GetEinecsCodes();
             }
         }
-        [ScaffoldColumn(false)]
+        
         public string EinecsDescriptions
         {
             get
@@ -259,7 +220,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string UN
         {
             get
@@ -268,7 +229,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string UNCode
         {
             get
@@ -280,7 +241,6 @@ namespace IesWebPortal.Model
         #endregion
 
         #region ShipTo properties
-        [ScaffoldColumn(false)]
         public string FullAddress
         {
             get
@@ -294,7 +254,7 @@ namespace IesWebPortal.Model
 
         #endregion
 
-        [ScaffoldColumn(false)]
+        
         public string BestBeforeDateString
         {
             get
@@ -304,7 +264,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string ManufacturedDateString
         {
             get
@@ -323,7 +283,7 @@ namespace IesWebPortal.Model
             return result;
         }
 
-        [ScaffoldColumn(false)]
+        
         public string NetWeightString
         {
             get
@@ -332,7 +292,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string TareString
         {
             get
@@ -341,7 +301,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+
         public string GrossWeightString
         {
             get
@@ -351,7 +311,7 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public string RID
         {
             get
@@ -359,7 +319,7 @@ namespace IesWebPortal.Model
                 return Item == null ? string.Empty : Item.RID;
             }
         }
-        [ScaffoldColumn(false)]
+        
         public string IMDG
         {
             get
@@ -367,7 +327,7 @@ namespace IesWebPortal.Model
                 return Item == null ? string.Empty : Item.IMDG;
             }
         }
-        [ScaffoldColumn(false)]
+        
         public string ICADIATA
         {
             get
@@ -376,14 +336,14 @@ namespace IesWebPortal.Model
             }
         }
 
-        [ScaffoldColumn(false)]
+        
         public bool OnlyAddress
         {
             get;
             set;
         }
 
-        [ScaffoldColumn(false)]
+        
         public string VendorDisplayName
         {
             get;
