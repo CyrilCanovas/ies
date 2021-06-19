@@ -137,102 +137,112 @@ new { id = "form", @class = "form-horizontal", role = "form" }))
     @Html.Hidden("ReportLanguage", ViewData["ReportLanguage"])
     @Html.Hidden("ReportName", ViewData["ReportName"])
 
-    <div class="form-inline container-fluid">
-        <div class="row form-group">
-            <input type="text" name="ShiftTagCount" class="form-control" style="width: 60px;text-align: right;height:auto;" />
-            <button type="button" id="btnselectshift" class="btn btn-success btn-default" aria-label="Left Align">
-                <span class="bi-grid-3x3" aria-hidden="true"></span>
-            </button>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <button type="button" id="btnprint" class="btn btn-primary btn-default" aria-label="Left Align">
+                    <span class="bi-printer" aria-hidden="true"></span>Imprimer
+                </button>
+            </div>
+            <div class="col-auto">
+                <label for="reportselect" class="col-form-label">Type</label>
+            </div>
+            <div class="col-auto">
+                <select class="form-select" id="reportselect" >
+                    @foreach (var item in (ViewData["ReportListItems"] as IEnumerable<SelectListItem>))
+                    {
+                        if (item.Selected)
+                        {
+                            <option value="@Html.Raw(item.Value)" selected="selected">@Html.Raw(item.Text)</option>
+                        }
+                        else
+                        {
+                            <option value="@Html.Raw(item.Value)">@Html.Raw(item.Text)</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="col-auto">
+                <label for="ShiftTagCount" class="col-form-label">Décalage</label>
+            </div>
+            <div class="col-auto col-xs-1">
+                <input type="text" name="ShiftTagCount" id="shifttagcount " class="form-control" style="text-align:right;width:60px" />
+            </div>
+            <div class="col-auto">
+                <button type="button" id="btnselectshift" class="btn btn-success btn-default" aria-label="Left Align">
+                    <span class="bi-grid-3x3" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="col-auto">
+                <label for="reportlanguage" class="col-form-label">Langue</label>
+            </div>
+            <div class="col-auto">
+                <select class="form-select" id="reportlanguage">
+                    @foreach (var item in (ViewData["ReportLanguages"] as IEnumerable<SelectListItem>))
+                    {
+                        if (item.Selected)
+                        {
+                            <option value="@Html.Raw(item.Value)" selected="selected">@Html.Raw(item.Text)</option>
+                        }
+                        else
+                        {
+                            <option value="@Html.Raw(item.Value)">@Html.Raw(item.Text)</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="col-auto">
+                @Html.Label("OnlyAddress", "Adresse seulement")
+                <input type="checkbox" name="OnlyAddress" value="true" @Html.Raw((bool)ViewData["OnlyAddress"] ? "checked" : "")>
+            </div>
 
-            <select class="form-control" id="reportselect">
-                @foreach (var item in (ViewData["ReportListItems"] as IEnumerable<SelectListItem>))
-                {
-                    if (item.Selected)
-                    {
-                        <option value="@Html.Raw(item.Value)" selected="selected">@Html.Raw(item.Text)</option>
-                    }
-                    else
-                    {
-                        <option value="@Html.Raw(item.Value)">@Html.Raw(item.Text)</option>
-                    }
-                }
-            </select>
-            <button type="button" id="btnprint" class="btn btn-primary btn-default" aria-label="Left Align">
-                <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimer
-            </button>
-            <select class="form-control" id="reportlanguage">
-                @foreach (var item in (ViewData["ReportLanguages"] as IEnumerable<SelectListItem>))
-                {
-                    if (item.Selected)
-                    {
-                        <option value="@Html.Raw(item.Value)" selected="selected">@Html.Raw(item.Text)</option>
-                    }
-                    else
-                    {
-                        <option value="@Html.Raw(item.Value)">@Html.Raw(item.Text)</option>
-                    }
-                }
-            </select>
-            <input type="checkbox" name="OnlyAddress" value="true" @Html.Raw((bool)ViewData["OnlyAddress"] ? "checked" : "")>
-            @Html.Label("OnlyAddress", "Adresse seulement")
         </div>
     </div>
-    <br />
-    <div class="panel panel-default">
-        <div style="margin-top:10px;">
-            <dl class="dl-horizontal" style="margin-bottom:10px;">
-                <dt>
-                    @Html.DisplayNameFor(model => model.DocumentNo)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.DocumentNo)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.DocumentDate)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.DocumentDate)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.DeleveryDate)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.DeleveryDate)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.CustomerVendorNo)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CustomerVendorNo)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Reference)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Reference)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Intitule)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Intitule)
-                </dd>
-            </dl>
+    
+    <div class="container-fluid mt-3">
+        <div class="row g-3 pt-2 align-items-center">
+            <div class="col">
+                <span class="input-group-text">@Html.DisplayNameFor(model => model.DocumentNo)</span>
+            </div>
+            <div class="col">
+                @Html.DisplayFor(model => model.DocumentNo)
+            </div>
+            <div class="col">
+                <span class="input-group-text">@Html.DisplayNameFor(model => model.DocumentDate)</span>
+            </div>
+            <div class="col">
+                @Html.DisplayFor(model => model.DocumentDate)
+            </div>
+            <div class="col">
+                <span class="input-group-text">@Html.DisplayNameFor(model => model.DeleveryDate)</span>
+            </div>
+            <div class="col">
+                @Html.DisplayFor(model => model.DeleveryDate)
+            </div>
+        </div>
+        <div class="row g-3 pt-2 align-items-center">
+            <div class="col">
+                <span class="input-group-text"> @Html.DisplayNameFor(model => model.CustomerVendorNo)</span>
+            </div>
+            <div class="col">
+                @Html.DisplayFor(model => model.CustomerVendorNo)
+            </div>
+            <div class="col">
+                <span class="input-group-text">@Html.DisplayNameFor(model => model.Reference)</span>
+            </div>
+            <div class="col">
+                @Html.DisplayFor(model => model.Reference)
+            </div>
+            <div class="col">
+                <span class="input-group-text">@Html.DisplayNameFor(model => model.Intitule)</span>
+            </div>
+            <div class="col">
+                @Html.DisplayFor(model => model.Intitule)
+            </div>
         </div>
     </div>
     <div class="table-responsive">
-        <table class="table table-condensed table-striped  table-hover table-vcenter  table-responsive">
+        <table class="table table-condensed table-striped  table-hover table-vcenter  table- table-responsive">
             <thead>
                 <tr class="btn-xs">
                     <th>
@@ -306,7 +316,7 @@ new { id = "form", @class = "form-horizontal", role = "form" }))
         </table>
     </div>
 
-}
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    }
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>

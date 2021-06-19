@@ -38,27 +38,31 @@
        ))
         {
             @Html.Hidden("documentType")
-            <div class="col-xs-3 form-inline">
-                <div class="form-group row">
-
-                    <select class="form-control" id="documenttypeselect">
-                        @foreach (var item in (ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>))
-                        {
-                            if (item.Selected)
-                            {
-                                <option value="@Html.Raw(item.Value)" selected="selected">@Html.Raw(item.Text)</option>
-                            }
-                            else
-                            {
-                                <option value="@Html.Raw(item.Value)">@Html.Raw(item.Text)</option>
-                            }
-                        }
-                    </select>
-                    &nbsp;<label for="documenttypeselect" class="control-label"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></label>
-                </div>
+            
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="documenttypeselect" class="col-form-label"><span class="bi-filter" aria-hidden="true"></span></label>
             </div>
-        }
-    </div>
+            <div class="col-auto">
+                <select class="form-select" id="documenttypeselect">
+                    @foreach (var item in (ViewData["DocumentTypeSelectListItems"] as IEnumerable<SelectListItem>))
+                    {
+                        if (item.Selected)
+                        {
+                            <option value="@Html.Raw(item.Value)" selected="selected">@Html.Raw(item.Text)</option>
+                        }
+                        else
+                        {
+                            <option value="@Html.Raw(item.Value)">@Html.Raw(item.Text)</option>
+                        }
+                    }
+                </select>
+            </div>
+
+        </div>
+
+            }
+        </div>
 </nav>
 <div class="table-responsive">
     <table class="table table-condensed table-striped  table-hover table-vcenter">
