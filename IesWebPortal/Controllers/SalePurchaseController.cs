@@ -11,6 +11,8 @@ using System.IO;
 using System.Threading.Tasks;
 using IesWebPortal.Models;
 using System.Globalization;
+using ReportTools.Core;
+using Microsoft.AspNetCore.Hosting;
 
 namespace IesWebPortal.Controllers
 {
@@ -19,11 +21,15 @@ namespace IesWebPortal.Controllers
         private readonly IDataService _dataService;
         private readonly IMLLabelConfigs _mlLabelConfigs;
         private readonly string _picturePath;
-        public SalePurchaseController(IDataService dataService, IMLLabelConfigs mlLabelConfigs, IIesWebPortalSettings iesWebPortalSettings)
+        private readonly string _reportPath;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public SalePurchaseController(IDataService dataService, IMLLabelConfigs mlLabelConfigs, IIesWebPortalSettings iesWebPortalSettings,IWebHostEnvironment environment)
         {
             _dataService = dataService;
             _mlLabelConfigs = mlLabelConfigs;
             _picturePath = iesWebPortalSettings.PicturePath;
+            _reportPath = IesWebPortal.Classes.IesWebPortalConstants.REPORT_PATH;
+            _webHostEnvironment = environment;
         }
         private static int FIRST_DOCUMENT_TYPE = IesWebPortalConstants.CST_DOCUMENTS.First().Key;
         public IActionResult Index(int? documentType, string sortColumn, string sortDirection)
@@ -199,7 +205,8 @@ namespace IesWebPortal.Controllers
             _dataService.FillLabels(docHeader, reportLanguage,
                 x =>
                 {
-                    return string.IsNullOrEmpty(_picturePath) ? Tools.MapPath(IesWebPortalConstants.PICTURE_PATH + x) : Path.Combine(_picturePath, x);
+                    return string.IsNullOrEmpty(_picturePath) ? 
+                        Path.Combine(_webHostEnvironment.WebRootPath, IesWebPortalConstants.PICTURE_PATH , x) : Path.Combine(_picturePath, x);
                 }
                 );
 
@@ -208,14 +215,55 @@ namespace IesWebPortal.Controllers
                 var all = docHeader.Lines.Select(x => x.Item).Distinct().ToList();
                 all.ForEach(ii => ii.DangerousFrench = string.Empty);
             }
-            //Response.Headers.Add("content-disposition", "inline;filename=" + model.DocumentNo + ".pdf");
-            var result = System.IO.File.ReadAllBytes("test.pdf");
+
+            var reportSettings = (from i in _mlLabelConfigs
+                                  where i.Key == printModel.ReportName
+                                  select i.Value.Settings).SingleOrDefault();
+            
+            var result = GetRawResult(
+                Path.Combine(_webHostEnvironment.WebRootPath, _reportPath , printModel.ReportName) ,
+                reportSettings,
+                docHeader.Lines,
+                reportLanguage
+            );
+
+            
+            Response.Headers.Add("content-disposition", "inline;filename=" + printModel.DocumentNo + ".pdf");
+            
             var contentresult = new FileContentResult(result, MediaTypeHeaderValue.Parse("application/pdf"));
             //Tools.SetCookie(Reponse,"ReportLanguage", reportlanguage);
             //SetCookie(Constants.COOKIE_LASTREPORTNAME, reportname);
             //SetCookie(Constants.COOKIE_ONLYADDRESS, onlyaddress.ToString());
             return contentresult;
 
+        }
+
+        protected byte[] GetRawResult(
+            string reportFilePath,
+            string reportSettings,
+            IEnumerable<object> mainDataset,
+            string reportLanguage
+        )
+        {
+            
+            ReportHelper.PageInfo pageSettings = null;
+            if (!string.IsNullOrEmpty(reportSettings))
+                pageSettings = ReportHelper.ParsePageInfoString(reportSettings);
+
+            return ReportHelper.RenderReport(
+                    reportFilePath,
+                    new string[] { "MainDataSet" },
+                    new object[] { mainDataset },
+                    //      subreportprocessing,
+                    null,
+                    pageSettings == null ? 0 : pageSettings.PageWidth,
+                    pageSettings == null ? 0 : pageSettings.PageHeight,
+                    pageSettings == null ? 0 : pageSettings.MarginTop,
+                    pageSettings == null ? 0 : pageSettings.MarginLeft,
+                    pageSettings == null ? 0 : pageSettings.MarginRight,
+                    pageSettings == null ? 0 : pageSettings.MarginBottom,
+                    reportLanguage == "SA" ? new Dictionary<string, string>() { { "CustomDirection", "RTL" } } : new Dictionary<string, string>() { { "CustomDirection", "LTR" } }
+                );
         }
     }
 }

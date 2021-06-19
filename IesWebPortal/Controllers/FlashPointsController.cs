@@ -2,6 +2,7 @@
 using IesWebPortal.Models;
 using IesWebPortal.Services.Interfaces;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,10 +19,12 @@ namespace IesWebPortal.Controllers
     {
         private readonly IDataService _dataService;
         private readonly string _picturePath;
-        public FlashPointsController(IDataService dataService, IIesWebPortalSettings iesWebPortalSettings)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public FlashPointsController(IDataService dataService, IIesWebPortalSettings iesWebPortalSettings, IWebHostEnvironment environment)
         {
             _dataService = dataService;
             _picturePath = iesWebPortalSettings.PicturePath;
+            _webHostEnvironment = environment;
         }
 
         [HttpGet]
@@ -30,7 +33,7 @@ namespace IesWebPortal.Controllers
         {
             var datas = _dataService.GetInventories(x =>
             {
-                return string.IsNullOrEmpty(_picturePath) ? Tools.MapPath(IesWebPortalConstants.PICTURE_PATH + x) : Path.Combine(_picturePath, x);
+                return string.IsNullOrEmpty(_picturePath) ? Path.Combine(_webHostEnvironment.ContentRootPath, IesWebPortalConstants.PICTURE_PATH + x) : Path.Combine(_picturePath, x);
             }
             );
             var result = from i in datas

@@ -61,12 +61,12 @@ namespace IesWebPortal.Classes
             //    cookie.Values.Add(item.Key, item.Value);
             //Response.Cookies.Set(cookie);
         }
-        public static string MapPath(string path)
-        {
-            return Path.Combine(
-                (string)AppDomain.CurrentDomain.GetData("ContentRootPath"),
-                path);
-        }
+        //public static string MapPath(string path)
+        //{
+        //    return Path.Combine(
+        //        (string)AppDomain.CurrentDomain.GetData("ContentRootPath"),
+        //        path);
+        //}
         public static string ToUTF8String(this XDocument xdocument)
         {
             string result;

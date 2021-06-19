@@ -21,8 +21,8 @@ namespace IesWebPortal.Classes
         public const string COOKIE_LASTDOCUMENTTYPE = "LastDocumentType";
         public const string COOKIE_LASTSORTSALEPURCHASE = "LastSalePurchase";
 
-        public const string REPORT_PATH = "~/Reports/";
-        public const string PICTURE_PATH = "~/Pictures/";
+        public const string REPORT_PATH = "Reports";
+        public const string PICTURE_PATH = "Pictures";
 
         public static KeyValuePair<int, string>[] CST_DOCUMENTS = new KeyValuePair<int, string>[]{
                                                                     new KeyValuePair<int, string>((int)SageClassLibrary.DataModel.EnumDocType.SalesOrder,"Bon de commande (vente)"),
