@@ -18,7 +18,8 @@ using Microsoft.OData.Edm;
 using Microsoft.AspNet.OData.Builder;
 using IesWebPortal.Models;
 using IesWebPortal.Model;
-
+using System.IO;
+using IesWebPortal.Classes;
 
 namespace IesWebPortal
 {
@@ -40,7 +41,7 @@ namespace IesWebPortal
             services.AddOData();
             services.AddTransient<SageDataContext>(x => CreateSageDataContext(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IMemoManager>(x => CreateMemoManager(x.GetService<IIesWebPortalSettings>()));
-            services.AddTransient<IDataService>(x => new DataService(x.GetService<SageDataContext>(), x.GetService<IMemoManager>(), null));
+            services.AddTransient<IDataService>(x => CreateDataService(x.GetService<SageDataContext>(), x.GetService<IMemoManager>(), x.GetService<IIesWebPortalSettings>(),x.GetService<IWebHostEnvironment>()));
             
             services.AddSingleton<IMLLabelConfigs>(x => GetLabelConfigs(x.GetService<IIesWebPortalSettings>()));
 
@@ -52,6 +53,34 @@ namespace IesWebPortal
             return new MemoManager(iesWebPortalSettings.RiskCapture, iesWebPortalSettings.EiniecsCapture, iesWebPortalSettings.UnCapture, iesWebPortalSettings.PictureCapture);
         }
 
+        private static IDataService CreateDataService(SageDataContext sageDataContext,IMemoManager memoManager,IIesWebPortalSettings iesWebPortalSettings, IWebHostEnvironment environment)
+        {
+            byte[] emptyPictureContent = null;
+            if (!string.IsNullOrEmpty(iesWebPortalSettings.EmptyPicture))
+            {
+                try
+                {
+                    var pathRoot = Path.GetPathRoot(iesWebPortalSettings.EmptyPicture);
+                    string fileName = null;
+                    if (string.IsNullOrWhiteSpace(pathRoot) || pathRoot =="/" || pathRoot == @"\")
+                    {
+                        fileName = Path.Combine(environment.WebRootPath, IesWebPortalConstants.PICTURE_PATH, iesWebPortalSettings.EmptyPicture);
+                    }
+                    else
+                    {
+                        fileName = iesWebPortalSettings.EmptyPicture;
+                    }
+                    emptyPictureContent = File.ReadAllBytes(fileName);
+                }
+                catch(Exception ex)
+                {
+
+                }
+
+                
+            }
+            return new DataService(sageDataContext, memoManager, emptyPictureContent);
+        }
         private static SageDataContext CreateSageDataContext(string connStr)
         {
             var sqlconn = new SqlConnection(connStr);
@@ -148,7 +177,16 @@ namespace IesWebPortal
                         ReportName = "DeliveryLabel.rdlc",
                         Description = "Etiquette livraison client",
                         Settings = iesWebPortalSettings.LabelSettings.ContainsKey("DeliveryLabelSettings") ? iesWebPortalSettings.LabelSettings["DeliveryLabelSettings"] : string.Empty
+                    },
+                    new MLLabelConfig()
+                    {
+                        ReportName = "BarrelProduct.rdlc",
+                        Description = "Etiquette produit fut",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("BarrelPrroductLabelSettings") ? iesWebPortalSettings.LabelSettings["BarrelPrroductLabelSettings"] : string.Empty
                     }
+
+
+                    
                 };
             return new MLLabelConfigs(configs);
         }

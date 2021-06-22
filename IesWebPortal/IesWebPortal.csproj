@@ -33,10 +33,4 @@
     <ProjectReference Include="..\SageClassLibrary-Ies\SageClassLibrary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="test.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
