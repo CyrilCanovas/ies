@@ -17,10 +17,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Direction">
-          <DataField>Direction</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="BestBeforeDate">
           <DataField>BestBeforeDate</DataField>
           <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
@@ -205,12 +201,12 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>28.5cm</Width>
+                  <Width>25.3cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>16cm</Height>
+                  <Height>5.8cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -225,37 +221,18 @@
                                       <Value>=Fields!Description.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>13pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>15.5pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value />
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>13pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>15.5pt</LineHeight>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>2.20231cm</Top>
-                              <Height>1.75284cm</Height>
-                              <Width>8.7cm</Width>
+                              <Left>3.15678cm</Left>
+                              <Height>1.58659cm</Height>
+                              <Width>4.5cm</Width>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -279,44 +256,9 @@
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>44pt</FontSize>
+                                        <FontSize>19pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                         <TextDecoration>None</TextDecoration>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>1.09122cm</Top>
-                              <Left>9.04221cm</Left>
-                              <Height>1.67653cm</Height>
-                              <Width>16.01777cm</Width>
-                              <ZIndex>1</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <VerticalAlign>Top</VerticalAlign>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox4">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!ExtItemNo.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -326,11 +268,11 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>5.50785cm</Top>
-                              <Left>16.35998cm</Left>
-                              <Height>0.5cm</Height>
-                              <Width>5.30753cm</Width>
-                              <ZIndex>2</ZIndex>
+                              <Top>0.96175cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>0.8047cm</Height>
+                              <Width>3.76472cm</Width>
+                              <ZIndex>1</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -338,8 +280,7 @@
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
+                                <VerticalAlign>Top</VerticalAlign>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox6">
@@ -351,7 +292,7 @@
                                       <Value>=Fields!FullAddress.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
+                                        <FontSize>6pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -360,11 +301,11 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>3.28328cm</Top>
-                              <Left>9.04221cm</Left>
-                              <Height>2.73876cm</Height>
-                              <Width>7.10963cm</Width>
-                              <ZIndex>3</ZIndex>
+                              <Top>3.95319cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>1.82603cm</Height>
+                              <Width>3.76472cm</Width>
+                              <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -384,70 +325,60 @@
                                       <Value>RID: </Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
                                       <Value>=Fields!RID.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
                                       <Value> / IMDG: </Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
                                       <Value>=Fields!IMDG.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
                                       <Value> / ICAOIATA: </Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
                                       <Value>=Fields!ICADIATA.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value xml:space="preserve"> </Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <LineHeight>11pt</LineHeight>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>0.5154cm</Top>
-                              <Left>9.04221cm</Left>
-                              <Height>0.52361cm</Height>
-                              <Width>19.19355cm</Width>
-                              <ZIndex>4</ZIndex>
+                              <Top>0.36667cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>0.36034cm</Height>
+                              <Width>8.8cm</Width>
+                              <ZIndex>3</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -457,8 +388,6 @@
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox8">
@@ -470,21 +399,19 @@
                                       <Value>=Fields!UN.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <LineHeight>11pt</LineHeight>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Left>9.04221cm</Left>
-                              <Height>0.5154cm</Height>
-                              <Width>19.19355cm</Width>
-                              <ZIndex>5</ZIndex>
+                              <Left>7.69206cm</Left>
+                              <Height>0.36034cm</Height>
+                              <Width>8.8cm</Width>
+                              <ZIndex>4</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -506,23 +433,21 @@
                                     <TextRun>
                                       <Value>=Fields!DangerousFrench.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>18pt</FontSize>
+                                        <FontFamily>roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>5.99029cm</Top>
-                              <Left>21.32404cm</Left>
-                              <Height>1.08329cm</Height>
-                              <Width>4.02988cm</Width>
-                              <ZIndex>6</ZIndex>
+                              <Top>0.72701cm</Top>
+                              <Left>11.51448cm</Left>
+                              <Height>0.36034cm</Height>
+                              <Width>5cm</Width>
+                              <ZIndex>5</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -532,8 +457,6 @@
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox11">
@@ -544,36 +467,32 @@
                                     <TextRun>
                                       <Value>=Fields!RisksOthersFR.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>6pt</FontSize>
+                                        <FontSize>4pt</FontSize>
+                                        <FontWeight>SemiBold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <LineHeight>7pt</LineHeight>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!RisksPFR.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>6pt</FontSize>
+                                        <FontSize>4pt</FontSize>
+                                        <FontWeight>SemiBold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <LineHeight>7pt</LineHeight>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>6.16316cm</Top>
-                              <Left>9.04221cm</Left>
-                              <Height>4.73031cm</Height>
-                              <Width>9.5cm</Width>
-                              <ZIndex>7</ZIndex>
+                              <Top>1.08735cm</Top>
+                              <Left>11.51448cm</Left>
+                              <Height>2.17742cm</Height>
+                              <Width>5cm</Width>
+                              <ZIndex>6</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -596,23 +515,21 @@
                                     <TextRun>
                                       <Value>=Fields!DangerousEnglish.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>18pt</FontSize>
+                                        <FontFamily>roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>14.88489cm</Top>
-                              <Left>21.32404cm</Left>
-                              <Height>1.08329cm</Height>
-                              <Width>4.02988cm</Width>
-                              <ZIndex>8</ZIndex>
+                              <Top>3.25082cm</Top>
+                              <Left>11.51448cm</Left>
+                              <Height>0.36034cm</Height>
+                              <Width>5cm</Width>
+                              <ZIndex>7</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -622,11 +539,9 @@
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <Textbox Name="Textbox13">
+                            <Textbox Name="Textbox14">
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -635,38 +550,33 @@
                                       <Value>=Fields!RisksOthersEN.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
-                                        <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>6pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
+                                        <FontSize>4pt</FontSize>
+                                        <FontWeight>SemiBold</FontWeight>
                                         <TextDecoration>None</TextDecoration>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <LineHeight>7pt</LineHeight>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!RisksPEN.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>6pt</FontSize>
+                                        <FontSize>4pt</FontSize>
+                                        <FontWeight>SemiBold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <LineHeight>7pt</LineHeight>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>10.94568cm</Top>
-                              <Left>9.04221cm</Left>
-                              <Height>4.73031cm</Height>
-                              <Width>9.5cm</Width>
-                              <ZIndex>9</ZIndex>
+                              <Top>3.61116cm</Top>
+                              <Left>11.51448cm</Left>
+                              <Height>2.17742cm</Height>
+                              <Width>5cm</Width>
+                              <ZIndex>8</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -689,385 +599,22 @@
                                       <Value>=Fields!EinecsCodes.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>6pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>4.36412cm</Top>
-                              <Left>0.00005cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>10</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Image Name="Image2">
-                              <Source>Database</Source>
-                              <Value>=Fields!Picture2.Value</Value>
-                              <MIMEType>image/png</MIMEType>
-                              <Sizing>FitProportional</Sizing>
-                              <Top>6.4742cm</Top>
-                              <Left>18.88844cm</Left>
-                              <Height>4cm</Height>
-                              <Width>4cm</Width>
-                              <ZIndex>11</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Image>
-                            <Image Name="Image3">
-                              <Source>Database</Source>
-                              <Value>=Fields!Picture3.Value</Value>
-                              <MIMEType>image/png</MIMEType>
-                              <Sizing>FitProportional</Sizing>
-                              <Top>6.4742cm</Top>
-                              <Left>23.86072cm</Left>
-                              <Height>4cm</Height>
-                              <Width>4cm</Width>
-                              <ZIndex>12</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Image>
-                            <Image Name="Image4">
-                              <Source>Database</Source>
-                              <Value>=Fields!Picture4.Value</Value>
-                              <MIMEType>image/png</MIMEType>
-                              <Sizing>FitProportional</Sizing>
-                              <Top>11.14568cm</Top>
-                              <Left>23.86072cm</Left>
-                              <Height>4cm</Height>
-                              <Width>4cm</Width>
-                              <ZIndex>13</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Image>
-                            <Image Name="Image5">
-                              <Source>Database</Source>
-                              <Value>=Fields!Picture5.Value</Value>
-                              <MIMEType>image/png</MIMEType>
-                              <Sizing>FitProportional</Sizing>
-                              <Top>11.14568cm</Top>
-                              <Left>18.88844cm</Left>
-                              <Height>4cm</Height>
-                              <Width>4cm</Width>
-                              <ZIndex>14</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Image>
-                            <Image Name="Image1">
-                              <Source>Database</Source>
-                              <Value>=Fields!Picture1.Value</Value>
-                              <MIMEType>image/png</MIMEType>
-                              <Sizing>FitProportional</Sizing>
-                              <Top>8.76562cm</Top>
-                              <Left>21.32404cm</Left>
-                              <Height>4cm</Height>
-                              <Width>4cm</Width>
-                              <ZIndex>15</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Image>
-                            <Textbox Name="Textbox18">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!FlashPoint.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>11.37943cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>16</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox19">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!NetWeightString.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>12.36516cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>17</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox20">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!TareString.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>13.35088cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>18</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox21">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!GrossWeightString.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>14.33661cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>19</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox22">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!ManufacturedDateString.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>9.40799cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>20</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox23">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!BestBeforeDateString.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>10.39371cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>21</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox24">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!SerialNo.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>8.42226cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>22</ZIndex>
+                              <Top>1.90108cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.3cm</Height>
+                              <Width>4.5cm</Width>
+                              <ZIndex>9</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -1088,97 +635,417 @@
                                       <Value>=Fields!EinecsDescriptions.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>2.5335cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>1.4666cm</Height>
+                              <Width>4.5cm</Width>
+                              <ZIndex>10</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Image Name="Image2">
+                              <Source>Database</Source>
+                              <Value>=Fields!Picture2.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>0.36667cm</Top>
+                              <Left>16.54976cm</Left>
+                              <Height>2.3cm</Height>
+                              <Width>2.3cm</Width>
+                              <ZIndex>11</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image3">
+                              <Source>Database</Source>
+                              <Value>=Fields!Picture3.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>0.36667cm</Top>
+                              <Left>19.17912cm</Left>
+                              <Height>2.3cm</Height>
+                              <Width>2.3cm</Width>
+                              <ZIndex>12</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image4">
+                              <Source>Database</Source>
+                              <Value>=Fields!Picture4.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>3.16056cm</Top>
+                              <Left>19.17912cm</Left>
+                              <Height>2.3cm</Height>
+                              <Width>2.3cm</Width>
+                              <ZIndex>13</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image5">
+                              <Source>Database</Source>
+                              <Value>=Fields!Picture5.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>3.16056cm</Top>
+                              <Left>16.54976cm</Left>
+                              <Height>2.3cm</Height>
+                              <Width>2.3cm</Width>
+                              <ZIndex>14</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image1">
+                              <Source>Database</Source>
+                              <Value>=Fields!Picture1.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>1.64306cm</Top>
+                              <Left>17.87207cm</Left>
+                              <Height>2.3cm</Height>
+                              <Width>2.3cm</Width>
+                              <ZIndex>15</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Textbox Name="Textbox18">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!FlashPoint.Value</Value>
+                                      <Style>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
-                                    <LineHeight>13pt</LineHeight>
+                                    <TextAlign>Left</TextAlign>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>5.34985cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>1.68284cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>4.89381cm</Top>
+                              <Height>0.3cm</Height>
+                              <Width>3.1215cm</Width>
+                              <ZIndex>16</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox19">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!NetWeightString.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>4.312cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.3cm</Height>
+                              <Width>4.5cm</Width>
+                              <ZIndex>17</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox20">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!TareString.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>4.90453cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.3cm</Height>
+                              <Width>4.5cm</Width>
+                              <ZIndex>18</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox21">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!GrossWeightString.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>5.48cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.3cm</Height>
+                              <Width>4.5cm</Width>
+                              <ZIndex>19</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox22">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!ManufacturedDateString.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>3.77019cm</Top>
+                              <Height>0.3cm</Height>
+                              <Width>3.1215cm</Width>
+                              <ZIndex>20</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox23">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!BestBeforeDateString.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>4.332cm</Top>
+                              <Height>0.3cm</Height>
+                              <Width>3.1215cm</Width>
+                              <ZIndex>21</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox24">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!SerialNo.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>3.20838cm</Top>
+                              <Height>0.3cm</Height>
+                              <Width>3.1215cm</Width>
+                              <ZIndex>22</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Reference">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!Reference.Value</Value>
+                                      <Style>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Reference</rd:DefaultName>
+                              <Top>2.69982cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>0.3cm</Height>
+                              <Width>3.76472cm</Width>
                               <ZIndex>23</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="DocumentNo">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!DocumentNo.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>DocumentNo</rd:DefaultName>
-                              <Top>3.32129cm</Top>
-                              <Left>16.35998cm</Left>
-                              <Height>0.5cm</Height>
-                              <Width>5.30753cm</Width>
-                              <ZIndex>24</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox17">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!VendorDisplayName.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>7.43654cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.58187cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>25</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -1196,25 +1063,28 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>EINECS</Value>
+                                      <Value>=Fields!ExtItemNo.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>3.96539cm</Top>
-                              <Left>0.00002cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>26</ZIndex>
+                              <rd:DefaultName>Textbox5</rd:DefaultName>
+                              <Top>3.32651cm</Top>
+                              <Left>7.71323cm</Left>
+                              <Height>0.3cm</Height>
+                              <Width>3.76472cm</Width>
+                              <ZIndex>24</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -1223,30 +1093,117 @@
                                 <PaddingRight>2pt</PaddingRight>
                               </Style>
                             </Textbox>
+                            <Textbox Name="Reference2">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!VendorDisplayName.Value</Value>
+                                      <Style>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Reference</rd:DefaultName>
+                              <Top>2.65231cm</Top>
+                              <Height>0.3cm</Height>
+                              <Width>3.1215cm</Width>
+                              <ZIndex>25</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox4">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>IES Ingredients</Value>
+                                      <Style>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>5pt</FontSize>
+                                        <TextDecoration>None</TextDecoration>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <LineHeight>6pt</LineHeight>
+                                  </Style>
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Parc d'activités de fontvieille
+13190 ALLAUCH - FRANCE
+Tel: +33 (0)4 91 07 70 88
+Email: ies2@ies-ingredients.com   </Value>
+                                      <Style>
+                                        <FontFamily>Roboto</FontFamily>
+                                        <FontSize>5pt</FontSize>
+                                        <TextDecoration>None</TextDecoration>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <LineHeight>6pt</LineHeight>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox1</rd:DefaultName>
+                              <Top>1.21715cm</Top>
+                              <Height>1.17cm</Height>
+                              <Width>3.1215cm</Width>
+                              <ZIndex>26</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
                             <Textbox Name="Textbox26">
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>CONTIENT / CONTAINS</Value>
+                                      <Value>EINECS</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>4.95111cm</Top>
-                              <Left>0.00002cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>1.62187cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>4.5cm</Width>
                               <ZIndex>27</ZIndex>
                               <Style>
                                 <Border>
@@ -1262,24 +1219,24 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>FABRICANT / MANUFACTURER</Value>
+                                      <Value>CONTIENT / CONTAINS</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>7.0378cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>2.25428cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>4.5cm</Width>
                               <ZIndex>28</ZIndex>
                               <Style>
                                 <Border>
@@ -1295,24 +1252,23 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>LOT N° / BATCH NUMBER</Value>
+                                      <Value>FABRICANT / MANUFACTURER</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>8.02353cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>2.3905cm</Top>
+                              <Height>0.25108cm</Height>
+                              <Width>3.1215cm</Width>
                               <ZIndex>29</ZIndex>
                               <Style>
                                 <Border>
@@ -1328,24 +1284,23 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>FABRIQUE LE / MANUFACTURING DATE</Value>
+                                      <Value>LOT N° / BATCH NUMBER</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>9.00925cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>2.94657cm</Top>
+                              <Height>0.25108cm</Height>
+                              <Width>3.1215cm</Width>
                               <ZIndex>30</ZIndex>
                               <Style>
                                 <Border>
@@ -1361,24 +1316,23 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>DLUO / BEST BEFORE</Value>
+                                      <Value>FABRIQUE LE / MANUFACTURING DATE</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>9.99498cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>3.50838cm</Top>
+                              <Height>0.25108cm</Height>
+                              <Width>3.1215cm</Width>
                               <ZIndex>31</ZIndex>
                               <Style>
                                 <Border>
@@ -1394,24 +1348,23 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>POINT ECLAIR / FLASHPOINT</Value>
+                                      <Value>DLUO / BEST BEFORE</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>10.9807cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>4.07019cm</Top>
+                              <Height>0.25108cm</Height>
+                              <Width>3.1215cm</Width>
                               <ZIndex>32</ZIndex>
                               <Style>
                                 <Border>
@@ -1427,24 +1380,23 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>POIDS NET / NET WEIGHT</Value>
+                                      <Value>POINT ECLAIR / FLASHPOINT</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>11.96642cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>4.632cm</Top>
+                              <Height>0.25108cm</Height>
+                              <Width>3.1215cm</Width>
                               <ZIndex>33</ZIndex>
                               <Style>
                                 <Border>
@@ -1460,24 +1412,24 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>TARE</Value>
+                                      <Value>POIDS NET / NET WEIGHT</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>12.95215cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>4.03538cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>4.5cm</Width>
                               <ZIndex>34</ZIndex>
                               <Style>
                                 <Border>
@@ -1496,21 +1448,21 @@
                                       <Value>POIDS BRUT / GROSS WEIGHT</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>13.93787cm</Top>
-                              <Left>0.00003cm</Left>
-                              <Height>0.39362cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>5.22453cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>4.5cm</Width>
                               <ZIndex>35</ZIndex>
                               <Style>
                                 <Border>
@@ -1526,133 +1478,25 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>ADRESSE DE LIVRAISON / DELIVERY ADDRESS</Value>
+                                      <Value>TARE</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>2.77465cm</Top>
-                              <Left>9.04221cm</Left>
-                              <Height>0.5cm</Height>
-                              <Width>7.10963cm</Width>
+                              <Top>4.64272cm</Top>
+                              <Left>3.15678cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>4.5cm</Width>
                               <ZIndex>36</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox36">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>CODE PRODUIT CLIENT / CUSTOMER PRODUCT CODE</Value>
-                                      <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>4.96121cm</Top>
-                              <Left>16.35998cm</Left>
-                              <Height>0.5cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>37</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox37">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>N° COMMANDE / SHIP NUMBER</Value>
-                                      <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>3.86793cm</Top>
-                              <Left>16.35998cm</Left>
-                              <Height>0.5cm</Height>
-                              <Width>8.7cm</Width>
-                              <ZIndex>38</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox5">
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!Reference.Value</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>4.41457cm</Top>
-                              <Left>16.35998cm</Left>
-                              <Height>0.5cm</Height>
-                              <Width>5.30753cm</Width>
-                              <ZIndex>39</ZIndex>
-                              <Visibility>
-                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
-                              </Visibility>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -1670,21 +1514,120 @@
                                       <Value>BON DE LIVRAISON / DELIVERY NOTE</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>13pt</LineHeight>
+                                    <LineHeight>7.5pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>2.77465cm</Top>
-                              <Left>16.35998cm</Left>
-                              <Height>0.5cm</Height>
-                              <Width>8.7cm</Width>
+                              <Top>1.79425cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>3.76472cm</Width>
+                              <ZIndex>37</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox36">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>ADRESSE DE LIVRAISON / DELIVERY ADDRESS</Value>
+                                      <Style>
+                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontSize>5pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <LineHeight>7.5pt</LineHeight>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox25</rd:DefaultName>
+                              <Top>3.67431cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>3.76472cm</Width>
+                              <ZIndex>38</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox37">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>N° COMMANDE / SHIP NUMBER</Value>
+                                      <Style>
+                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontSize>5pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <LineHeight>7.5pt</LineHeight>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox25</rd:DefaultName>
+                              <Top>2.42094cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>3.76472cm</Width>
+                              <ZIndex>39</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox39">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>CODE PRODUIT CLIENT / CUSTOMER PRODUCT CODE</Value>
+                                      <Style>
+                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontSize>5pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <LineHeight>7.5pt</LineHeight>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox25</rd:DefaultName>
+                              <Top>3.04762cm</Top>
+                              <Left>7.69206cm</Left>
+                              <Height>0.25108cm</Height>
+                              <Width>3.76472cm</Width>
                               <ZIndex>40</ZIndex>
                               <Style>
                                 <Border>
@@ -1692,78 +1635,45 @@
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <Textbox Name="Textbox1">
+                            <Textbox Name="Textbox40">
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>IES Ingredients</Value>
+                                      <Value>=Fields!DocumentNo.Value</Value>
                                       <Style>
+                                        <FontStyle>Normal</FontStyle>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>8pt</FontSize>
+                                        <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                         <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
                                     <TextAlign>Left</TextAlign>
-                                    <LineHeight>9.6pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>Parc d'activités de fontvieille
-13190 ALLAUCH</Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                        <TextDecoration>None</TextDecoration>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>9.6pt</LineHeight>
-                                  </Style>
-                                </Paragraph>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>FRANCE
-Tel: +33 (0)4 91 07 70 88
-Email: ies2@ies-ingredients.com      </Value>
-                                      <Style>
-                                        <FontFamily>Roboto</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                        <TextDecoration>None</TextDecoration>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                    <LineHeight>9.6pt</LineHeight>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Left>4.00003cm</Left>
-                              <Height>2.17056cm</Height>
-                              <Width>4.7cm</Width>
+                              <Top>2.07314cm</Top>
+                              <Left>7.71323cm</Left>
+                              <Height>0.3cm</Height>
+                              <Width>3.76472cm</Width>
                               <ZIndex>41</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!OnlyAddress.Value</Hidden>
+                              </Visibility>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
                           </ReportItems>
@@ -1794,8 +1704,8 @@ Email: ies2@ies-ingredients.com      </Value>
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>MainDataSet</DataSetName>
-            <Height>16cm</Height>
-            <Width>28.5cm</Width>
+            <Height>5.8cm</Height>
+            <Width>25.3cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1803,10 +1713,10 @@ Email: ies2@ies-ingredients.com      </Value>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>6.29921in</Height>
+        <Height>2.28346in</Height>
         <Style />
       </Body>
-      <Width>11.22047in</Width>
+      <Width>9.96063in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

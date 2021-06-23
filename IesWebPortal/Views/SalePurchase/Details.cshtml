@@ -294,19 +294,19 @@ new { id = "form", @class = "form-horizontal", role = "form" }))
                         @Html.DisplayFor(modelItem => Model.Lines[i].Qty)
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => Model.Lines[i].Qty, new { style = "text-align: right; width: 60px;" })
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].Qty, new { style = "text-align: right; width: 70px;" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => Model.Lines[i].Tare, new { style = "text-align: right; width: 40px;" })
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].Tare, new { style = "text-align: right; width: 70px;" })
                     </td>
                     <td>
                         @Html.TextBoxFor(modelItem => Model.Lines[i].LabelCount, new { style = "text-align: right; width: 40px;" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => Model.Lines[i].BestBeforeDate, "{0:dd/MM/yy}", new { style = "text-align: center; width: 70px;" })
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].BestBeforeDate, "{0:dd/MM/yy}", new { style = "text-align: center; width: 100px;" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => Model.Lines[i].ManufacturedDate, "{0:dd/MM/yy}", new { style = "text-align: center; width: 70px;" })
+                        @Html.TextBoxFor(modelItem => Model.Lines[i].ManufacturedDate, "{0:dd/MM/yy}", new { style = "text-align: center; width: 100px;" })
                     </td>
                     <td>
                         @Html.TextBoxFor(modelItem => Model.Lines[i].SerialNo)

@@ -182,11 +182,18 @@ namespace IesWebPortal
                     {
                         ReportName = "BarrelProduct.rdlc",
                         Description = "Etiquette produit fut",
-                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("BarrelPrroductLabelSettings") ? iesWebPortalSettings.LabelSettings["BarrelPrroductLabelSettings"] : string.Empty
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("BarrelProductLabelSettings") ? iesWebPortalSettings.LabelSettings["BarrelProductLabelSettings"] : string.Empty
+                    },
+                                        new MLLabelConfig()
+                    {
+                        ReportName = "SmallProduct.rdlc",
+                        Description = "Etiquette produit",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("SmallProductLabelSettings") ? iesWebPortalSettings.LabelSettings["SmallProductLabelSettings"] : string.Empty
                     }
 
 
-                    
+
+
                 };
             return new MLLabelConfigs(configs);
         }

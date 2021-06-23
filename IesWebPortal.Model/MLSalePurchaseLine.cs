@@ -25,10 +25,10 @@ namespace IesWebPortal.Model
         
         public string ExtItemNo { get; set; }
 
-        
+
         public string Description { get; set; }
 
-        
+
         public double Qty { get; set; }
 
         
