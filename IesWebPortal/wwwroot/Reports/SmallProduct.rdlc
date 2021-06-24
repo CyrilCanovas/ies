@@ -665,10 +665,10 @@
                               <Value>=Fields!Picture2.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>0.36667cm</Top>
-                              <Left>16.54976cm</Left>
-                              <Height>2.3cm</Height>
-                              <Width>2.3cm</Width>
+                              <Top>0.5cm</Top>
+                              <Left>16.68626cm</Left>
+                              <Height>1.8cm</Height>
+                              <Width>1.8cm</Width>
                               <ZIndex>11</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -684,10 +684,10 @@
                               <Value>=Fields!Picture3.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>0.36667cm</Top>
-                              <Left>19.17912cm</Left>
-                              <Height>2.3cm</Height>
-                              <Width>2.3cm</Width>
+                              <Top>0.5cm</Top>
+                              <Left>18.71087cm</Left>
+                              <Height>1.8cm</Height>
+                              <Width>1.8cm</Width>
                               <ZIndex>12</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -703,10 +703,10 @@
                               <Value>=Fields!Picture4.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>3.16056cm</Top>
-                              <Left>19.17912cm</Left>
-                              <Height>2.3cm</Height>
-                              <Width>2.3cm</Width>
+                              <Top>3.31931cm</Top>
+                              <Left>18.71087cm</Left>
+                              <Height>1.8cm</Height>
+                              <Width>1.8cm</Width>
                               <ZIndex>13</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -722,10 +722,10 @@
                               <Value>=Fields!Picture5.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>3.16056cm</Top>
-                              <Left>16.54976cm</Left>
-                              <Height>2.3cm</Height>
-                              <Width>2.3cm</Width>
+                              <Top>3.31931cm</Top>
+                              <Left>16.68626cm</Left>
+                              <Height>1.8cm</Height>
+                              <Width>1.8cm</Width>
                               <ZIndex>14</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -741,10 +741,10 @@
                               <Value>=Fields!Picture1.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>1.64306cm</Top>
-                              <Left>17.87207cm</Left>
-                              <Height>2.3cm</Height>
-                              <Width>2.3cm</Width>
+                              <Top>1.92125cm</Top>
+                              <Left>17.68686cm</Left>
+                              <Height>1.8cm</Height>
+                              <Width>1.8cm</Width>
                               <ZIndex>15</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -1078,7 +1078,7 @@
                               </Paragraphs>
                               <rd:DefaultName>Textbox5</rd:DefaultName>
                               <Top>3.32651cm</Top>
-                              <Left>7.71323cm</Left>
+                              <Left>7.69206cm</Left>
                               <Height>0.3cm</Height>
                               <Width>3.76472cm</Width>
                               <ZIndex>24</ZIndex>
@@ -1534,8 +1534,6 @@ Email: ies2@ies-ingredients.com   </Value>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox36">
@@ -1567,8 +1565,6 @@ Email: ies2@ies-ingredients.com   </Value>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox37">
@@ -1600,8 +1596,6 @@ Email: ies2@ies-ingredients.com   </Value>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox39">
@@ -1633,8 +1627,6 @@ Email: ies2@ies-ingredients.com   </Value>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
                               </Style>
                             </Textbox>
                             <Textbox Name="Textbox40">
@@ -1661,7 +1653,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>2.07314cm</Top>
-                              <Left>7.71323cm</Left>
+                              <Left>7.69206cm</Left>
                               <Height>0.3cm</Height>
                               <Width>3.76472cm</Width>
                               <ZIndex>41</ZIndex>
