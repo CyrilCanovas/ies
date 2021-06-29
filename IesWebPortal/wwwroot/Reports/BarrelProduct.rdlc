@@ -326,7 +326,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>5.50785cm</Top>
+                              <Top>5.3491cm</Top>
                               <Left>16.35998cm</Left>
                               <Height>0.5cm</Height>
                               <Width>5.30753cm</Width>
@@ -351,7 +351,6 @@
                                       <Value>=Fields!FullAddress.Value</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
-                                        <FontSize>12pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -518,8 +517,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>5.99029cm</Top>
-                              <Left>21.32404cm</Left>
+                              <Top>5.95854cm</Top>
+                              <Left>21.35579cm</Left>
                               <Height>1.08329cm</Height>
                               <Width>4.02988cm</Width>
                               <ZIndex>6</ZIndex>
@@ -544,8 +543,9 @@
                                     <TextRun>
                                       <Value>=Fields!RisksOthersFR.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontFamily>Roboto</FontFamily>
                                         <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -558,8 +558,9 @@
                                     <TextRun>
                                       <Value>=Fields!RisksPFR.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontFamily>Roboto</FontFamily>
                                         <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -569,9 +570,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>6.16316cm</Top>
+                              <Top>6.06085cm</Top>
                               <Left>9.04221cm</Left>
-                              <Height>4.73031cm</Height>
+                              <Height>4.581cm</Height>
                               <Width>9.5cm</Width>
                               <ZIndex>7</ZIndex>
                               <Visibility>
@@ -608,8 +609,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>14.88489cm</Top>
-                              <Left>21.32404cm</Left>
+                              <Top>14.85314cm</Top>
+                              <Left>21.35579cm</Left>
                               <Height>1.08329cm</Height>
                               <Width>4.02988cm</Width>
                               <ZIndex>8</ZIndex>
@@ -634,11 +635,9 @@
                                     <TextRun>
                                       <Value>=Fields!RisksOthersEN.Value</Value>
                                       <Style>
-                                        <FontStyle>Normal</FontStyle>
-                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontFamily>Roboto</FontFamily>
                                         <FontSize>6pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -651,8 +650,9 @@
                                     <TextRun>
                                       <Value>=Fields!RisksPEN.Value</Value>
                                       <Style>
-                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontFamily>Roboto</FontFamily>
                                         <FontSize>6pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -662,9 +662,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>10.94568cm</Top>
+                              <Top>10.65993cm</Top>
                               <Left>9.04221cm</Left>
-                              <Height>4.73031cm</Height>
+                              <Height>4.581cm</Height>
                               <Width>9.5cm</Width>
                               <ZIndex>9</ZIndex>
                               <Visibility>
@@ -701,7 +701,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>4.36412cm</Top>
+                              <Top>4.36269cm</Top>
                               <Left>0.00005cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -724,7 +724,7 @@
                               <Value>=Fields!Picture2.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>6.4742cm</Top>
+                              <Top>6.44245cm</Top>
                               <Left>18.88844cm</Left>
                               <Height>4cm</Height>
                               <Width>4cm</Width>
@@ -743,7 +743,7 @@
                               <Value>=Fields!Picture3.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>6.4742cm</Top>
+                              <Top>6.44245cm</Top>
                               <Left>23.86072cm</Left>
                               <Height>4cm</Height>
                               <Width>4cm</Width>
@@ -835,7 +835,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>11.37943cm</Top>
+                              <Top>11.40013cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -873,7 +873,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>12.36516cm</Top>
+                              <Top>12.38954cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -911,7 +911,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>13.35088cm</Top>
+                              <Top>13.37895cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -949,7 +949,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>14.33661cm</Top>
+                              <Top>14.36836cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -987,7 +987,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>9.40799cm</Top>
+                              <Top>9.4213cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -1025,7 +1025,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>10.39371cm</Top>
+                              <Top>10.41072cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -1063,7 +1063,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>8.42226cm</Top>
+                              <Top>8.43189cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -1099,7 +1099,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>5.34985cm</Top>
+                              <Top>5.3521cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>1.68284cm</Height>
                               <Width>8.7cm</Width>
@@ -1137,7 +1137,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>DocumentNo</rd:DefaultName>
-                              <Top>3.32129cm</Top>
+                              <Top>3.28954cm</Top>
                               <Left>16.35998cm</Left>
                               <Height>0.5cm</Height>
                               <Width>5.30753cm</Width>
@@ -1174,7 +1174,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>7.43654cm</Top>
+                              <Top>7.44248cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.58187cm</Height>
                               <Width>8.7cm</Width>
@@ -1210,7 +1210,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>3.96539cm</Top>
+                              <Top>3.96211cm</Top>
                               <Left>0.00002cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1243,7 +1243,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>4.95111cm</Top>
+                              <Top>4.95152cm</Top>
                               <Left>0.00002cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1276,7 +1276,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>7.0378cm</Top>
+                              <Top>7.0419cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1309,7 +1309,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>8.02353cm</Top>
+                              <Top>8.03131cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1342,7 +1342,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>9.00925cm</Top>
+                              <Top>9.02072cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1375,7 +1375,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>9.99498cm</Top>
+                              <Top>10.01014cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1394,7 +1394,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>POINT ECLAIR / FLASHPOINT</Value>
+                                      <Value>POINT ECLAIR / FLASH POINT</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
                                         <FontSize>9pt</FontSize>
@@ -1408,7 +1408,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>10.9807cm</Top>
+                              <Top>10.99955cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1441,7 +1441,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>11.96642cm</Top>
+                              <Top>11.98896cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1474,7 +1474,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>12.95215cm</Top>
+                              <Top>12.97837cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1507,7 +1507,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>13.93787cm</Top>
+                              <Top>13.96778cm</Top>
                               <Left>0.00003cm</Left>
                               <Height>0.39362cm</Height>
                               <Width>8.7cm</Width>
@@ -1575,7 +1575,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>4.96121cm</Top>
+                              <Top>4.83421cm</Top>
                               <Left>16.35998cm</Left>
                               <Height>0.5cm</Height>
                               <Width>8.7cm</Width>
@@ -1610,7 +1610,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>3.86793cm</Top>
+                              <Top>3.80443cm</Top>
                               <Left>16.35998cm</Left>
                               <Height>0.5cm</Height>
                               <Width>8.7cm</Width>
@@ -1645,7 +1645,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>4.41457cm</Top>
+                              <Top>4.31932cm</Top>
                               <Left>16.35998cm</Left>
                               <Height>0.5cm</Height>
                               <Width>5.30753cm</Width>
@@ -1718,7 +1718,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Parc d'activités de fontvieille
+                                      <Value>Parc d'activités de Fontvieille
 13190 ALLAUCH</Value>
                                       <Style>
                                         <FontFamily>Roboto</FontFamily>
