@@ -230,9 +230,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Left>3.15678cm</Left>
-                              <Height>1.58659cm</Height>
-                              <Width>4.5cm</Width>
+                              <Left>3.20441cm</Left>
+                              <Height>1.53602cm</Height>
+                              <Width>4.50353cm</Width>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
                               </Visibility>
@@ -268,8 +268,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>0.96175cm</Top>
-                              <Left>7.69206cm</Left>
+                              <Top>0.73132cm</Top>
+                              <Left>7.70794cm</Left>
                               <Height>0.8047cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>1</ZIndex>
@@ -301,8 +301,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>3.95319cm</Top>
-                              <Left>7.69206cm</Left>
+                              <Top>3.95794cm</Top>
+                              <Left>7.70794cm</Left>
                               <Height>1.82603cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>2</ZIndex>
@@ -377,7 +377,7 @@
                               <Top>0.36256cm</Top>
                               <Left>7.70794cm</Left>
                               <Height>0.36034cm</Height>
-                              <Width>8.82242cm</Width>
+                              <Width>8.84074cm</Width>
                               <ZIndex>3</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -410,7 +410,7 @@
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Left>7.70794cm</Left>
                               <Height>0.36034cm</Height>
-                              <Width>8.82242cm</Width>
+                              <Width>8.84074cm</Width>
                               <ZIndex>4</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -446,7 +446,7 @@
                               <Top>0.72511cm</Top>
                               <Left>11.53036cm</Left>
                               <Height>0.28978cm</Height>
-                              <Width>5cm</Width>
+                              <Width>5.01832cm</Width>
                               <ZIndex>5</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -491,7 +491,7 @@
                               <Top>1.01712cm</Top>
                               <Left>11.53036cm</Left>
                               <Height>2.22697cm</Height>
-                              <Width>5cm</Width>
+                              <Width>5.01832cm</Width>
                               <ZIndex>6</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -527,7 +527,7 @@
                               <Top>3.2463cm</Top>
                               <Left>11.53036cm</Left>
                               <Height>0.28978cm</Height>
-                              <Width>5cm</Width>
+                              <Width>5.01832cm</Width>
                               <ZIndex>7</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -574,7 +574,7 @@
                               <Top>3.5383cm</Top>
                               <Left>11.53036cm</Left>
                               <Height>2.22697cm</Height>
-                              <Width>5cm</Width>
+                              <Width>5.01832cm</Width>
                               <ZIndex>8</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -608,8 +608,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>1.89886cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Top>1.80181cm</Top>
+                              <Left>3.20441cm</Left>
                               <Height>0.3cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>9</ZIndex>
@@ -642,8 +642,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>2.43825cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Top>2.37159cm</Top>
+                              <Left>3.20441cm</Left>
                               <Height>1.4666cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>10</ZIndex>
@@ -775,7 +775,7 @@
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>4.89381cm</Top>
                               <Height>0.3cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>16</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -811,8 +811,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>4.33293cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Top>4.33248cm</Top>
+                              <Left>3.20441cm</Left>
                               <Height>0.3cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>17</ZIndex>
@@ -850,8 +850,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>4.89516cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Top>4.89381cm</Top>
+                              <Left>3.20441cm</Left>
                               <Height>0.3cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>18</ZIndex>
@@ -890,7 +890,7 @@
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>5.45739cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Left>3.20441cm</Left>
                               <Height>0.3cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>19</ZIndex>
@@ -930,7 +930,7 @@
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>3.77115cm</Top>
                               <Height>0.3cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>20</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -968,7 +968,7 @@
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>4.33248cm</Top>
                               <Height>0.3cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>21</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -1004,9 +1004,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>3.20981cm</Top>
+                              <Top>3.20982cm</Top>
                               <Height>0.3cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>22</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -1039,8 +1039,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Reference</rd:DefaultName>
-                              <Top>2.70982cm</Top>
-                              <Left>7.69206cm</Left>
+                              <Top>2.37159cm</Top>
+                              <Left>7.70794cm</Left>
                               <Height>0.3cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>23</ZIndex>
@@ -1075,8 +1075,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox5</rd:DefaultName>
-                              <Top>3.3315cm</Top>
-                              <Left>7.69206cm</Left>
+                              <Top>3.16873cm</Top>
+                              <Left>7.70794cm</Left>
                               <Height>0.3cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>24</ZIndex>
@@ -1111,9 +1111,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Reference</rd:DefaultName>
-                              <Top>2.64848cm</Top>
+                              <Top>2.64849cm</Top>
                               <Height>0.3cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>25</ZIndex>
                               <Visibility>
                                 <Hidden>=Fields!OnlyAddress.Value</Hidden>
@@ -1168,7 +1168,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>1.30711cm</Top>
                               <Height>1.08004cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>26</ZIndex>
                               <Style>
                                 <Border>
@@ -1197,8 +1197,8 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>1.65362cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Top>1.54138cm</Top>
+                              <Left>3.20441cm</Left>
                               <Height>0.25108cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>27</ZIndex>
@@ -1230,8 +1230,8 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>2.19301cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Top>2.11116cm</Top>
+                              <Left>3.20441cm</Left>
                               <Height>0.25108cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>28</ZIndex>
@@ -1265,7 +1265,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
                               <Top>2.39228cm</Top>
                               <Height>0.25108cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>29</ZIndex>
                               <Style>
                                 <Border>
@@ -1297,7 +1297,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
                               <Top>2.95361cm</Top>
                               <Height>0.25108cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>30</ZIndex>
                               <Style>
                                 <Border>
@@ -1313,7 +1313,7 @@ Email: ies2@ies-ingredients.com   </Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>FABRIQUE LE / MANUFACTURING DATE</Value>
+                                      <Value>FABRIQUE LE / MFG DATE</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
                                         <FontSize>5pt</FontSize>
@@ -1329,7 +1329,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
                               <Top>3.51494cm</Top>
                               <Height>0.25108cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>31</ZIndex>
                               <Style>
                                 <Border>
@@ -1361,7 +1361,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
                               <Top>4.07627cm</Top>
                               <Height>0.25108cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>32</ZIndex>
                               <Style>
                                 <Border>
@@ -1393,7 +1393,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
                               <Top>4.6376cm</Top>
                               <Height>0.25108cm</Height>
-                              <Width>3.15678cm</Width>
+                              <Width>3.18853cm</Width>
                               <ZIndex>33</ZIndex>
                               <Style>
                                 <Border>
@@ -1424,7 +1424,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
                               <Top>4.07627cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Left>3.20441cm</Left>
                               <Height>0.25108cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>34</ZIndex>
@@ -1457,7 +1457,7 @@ Email: ies2@ies-ingredients.com   </Value>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
                               <Top>5.20074cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Left>3.20441cm</Left>
                               <Height>0.25108cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>35</ZIndex>
@@ -1489,8 +1489,8 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>4.6385cm</Top>
-                              <Left>3.15678cm</Left>
+                              <Top>4.6376cm</Top>
+                              <Left>3.20441cm</Left>
                               <Height>0.25108cm</Height>
                               <Width>4.5cm</Width>
                               <ZIndex>36</ZIndex>
@@ -1522,8 +1522,8 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>1.80175cm</Top>
-                              <Left>7.69206cm</Left>
+                              <Top>1.54138cm</Top>
+                              <Left>7.70794cm</Left>
                               <Height>0.25108cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>37</ZIndex>
@@ -1539,7 +1539,22 @@ Email: ies2@ies-ingredients.com   </Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>ADRESSE DE LIVRAISON / DELIVERY ADDRESS</Value>
+                                      <Value>ADRESSE DE LIVRAISON / </Value>
+                                      <Style>
+                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontSize>5pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <LineHeight>7.5pt</LineHeight>
+                                  </Style>
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>DELIVERY ADDRESS</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
                                         <FontSize>5pt</FontSize>
@@ -1553,9 +1568,9 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>3.66681cm</Top>
-                              <Left>7.69206cm</Left>
-                              <Height>0.25108cm</Height>
+                              <Top>3.46873cm</Top>
+                              <Left>7.70794cm</Left>
+                              <Height>0.47333cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>38</ZIndex>
                               <Style>
@@ -1584,8 +1599,8 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>2.42344cm</Top>
-                              <Left>7.69206cm</Left>
+                              <Top>2.11116cm</Top>
+                              <Left>7.70794cm</Left>
                               <Height>0.25108cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>39</ZIndex>
@@ -1601,7 +1616,22 @@ Email: ies2@ies-ingredients.com   </Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>CODE PRODUIT CLIENT / CUSTOMER PRODUCT CODE</Value>
+                                      <Value>CODE PRODUIT CLIENT / CUSTOMER </Value>
+                                      <Style>
+                                        <FontFamily>Roboto Light</FontFamily>
+                                        <FontSize>5pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <LineHeight>7.5pt</LineHeight>
+                                  </Style>
+                                </Paragraph>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>PRODUCT CODE</Value>
                                       <Style>
                                         <FontFamily>Roboto Light</FontFamily>
                                         <FontSize>5pt</FontSize>
@@ -1615,9 +1645,9 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox25</rd:DefaultName>
-                              <Top>3.04512cm</Top>
-                              <Left>7.69206cm</Left>
-                              <Height>0.25108cm</Height>
+                              <Top>2.66436cm</Top>
+                              <Left>7.70794cm</Left>
+                              <Height>0.50216cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>40</ZIndex>
                               <Style>
@@ -1649,8 +1679,8 @@ Email: ies2@ies-ingredients.com   </Value>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Top>2.08813cm</Top>
-                              <Left>7.69206cm</Left>
+                              <Top>1.80458cm</Top>
+                              <Left>7.70794cm</Left>
                               <Height>0.3cm</Height>
                               <Width>3.78714cm</Width>
                               <ZIndex>41</ZIndex>
@@ -1673,7 +1703,6 @@ Email: ies2@ies-ingredients.com   </Value>
                             </Border>
                           </Style>
                         </Rectangle>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
