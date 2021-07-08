@@ -80,7 +80,7 @@ namespace IesWebPortal.Services
         }
         public IMLMemoStruct[] GetEniecs(IEnumerable<string> values)
         {
-            return BuildMemoStructs(values, _einiecsRegex, "einiecs", null).Take(4).ToArray();
+            return BuildMemoStructs(values, _einiecsRegex, "einiecs", null).ToArray();
         }
 
         public IMLMemoStruct[] GetRisks(IEnumerable<string> values)

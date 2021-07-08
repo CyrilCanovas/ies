@@ -231,9 +231,10 @@ namespace IesWebPortal.Controllers
             Response.Headers.Add("content-disposition", "inline;filename=" + printModel.DocumentNo + ".pdf");
             
             var contentresult = new FileContentResult(result, MediaTypeHeaderValue.Parse("application/pdf"));
-            //Tools.SetCookie(Reponse,"ReportLanguage", reportlanguage);
-            //SetCookie(Constants.COOKIE_LASTREPORTNAME, reportname);
-            //SetCookie(Constants.COOKIE_ONLYADDRESS, onlyaddress.ToString());
+
+            Response.SetCookie("ReportLanguage", reportLanguage);
+            Response.SetCookie(IesWebPortalConstants.COOKIE_LASTREPORTNAME,printModel.ReportName);
+            Response.SetCookie(IesWebPortalConstants.COOKIE_ONLYADDRESS, (printModel.OnlyAddress??false).ToString());
             return contentresult;
 
         }

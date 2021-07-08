@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.6.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic" Version="3.6.0" />
-    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.13" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.14" />
   </ItemGroup>
 
 </Project>
