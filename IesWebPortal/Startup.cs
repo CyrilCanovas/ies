@@ -137,6 +137,19 @@ namespace IesWebPortal
         {
             var configs =
                 new MLLabelConfig[] {
+                    
+                    new MLLabelConfig()
+                    {
+                        ReportName = "BarrelProduct.rdlc",
+                        Description = "Etiquette grand format 2021",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("BarrelProductLabelSettings") ? iesWebPortalSettings.LabelSettings["BarrelProductLabelSettings"] : string.Empty
+                    },
+                                        new MLLabelConfig()
+                    {
+                        ReportName = "SmallProduct.rdlc",
+                        Description = "Etiquette drapeau 2021",
+                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("SmallProductLabelSettings") ? iesWebPortalSettings.LabelSettings["SmallProductLabelSettings"] : string.Empty
+                    },
                     new MLLabelConfig()
                     {
                         ReportName = "BigLabel.rdlc",
@@ -177,21 +190,7 @@ namespace IesWebPortal
                         ReportName = "DeliveryLabel.rdlc",
                         Description = "Etiquette livraison client",
                         Settings = iesWebPortalSettings.LabelSettings.ContainsKey("DeliveryLabelSettings") ? iesWebPortalSettings.LabelSettings["DeliveryLabelSettings"] : string.Empty
-                    },
-                    new MLLabelConfig()
-                    {
-                        ReportName = "BarrelProduct.rdlc",
-                        Description = "Etiquette produit fut",
-                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("BarrelProductLabelSettings") ? iesWebPortalSettings.LabelSettings["BarrelProductLabelSettings"] : string.Empty
-                    },
-                                        new MLLabelConfig()
-                    {
-                        ReportName = "SmallProduct.rdlc",
-                        Description = "Etiquette produit",
-                        Settings = iesWebPortalSettings.LabelSettings.ContainsKey("SmallProductLabelSettings") ? iesWebPortalSettings.LabelSettings["SmallProductLabelSettings"] : string.Empty
                     }
-
-
 
 
                 };
